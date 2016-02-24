@@ -26,7 +26,7 @@
     <p>
     <?php
     $name = "Dimocee";
-    if ($name == "Iliya")
+    if ($name == "Dimocee")
     { echo "I know you!";}
     else
     { print "who are you?";}
