@@ -12,8 +12,8 @@
 <body>
 <p>
     <?php
-    echo "Hello World";
-    echo "I am Here"."Not much of a fun"."Ba damuwa";
+    echo "<p>Hello World</p>";
+    echo "<p>I am Here"."Not much of a fun"."Ba damuwa";
     echo 5 * 7;
     $myname= "Modee Santuraki";
     $Myage= 200;
