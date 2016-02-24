@@ -17,7 +17,7 @@
     echo 5 * 7;
     $myname= "Modee Santuraki";
     $Myage= 200;
-    echo "My name is" ." ". $myname . "and I am " . $Myage;
+    echo "My name is" ." ". $myname . " "."and I am " . $Myage;
     ?>
 </p>
 </body>
