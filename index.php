@@ -35,15 +35,18 @@
 
 <?php
     $myage= "17";
-        if ($Myage =30)
-        {echo "buy specs";}
-    elseif
-($myage < 17)
-    {echo "buy mugs";}
-elseif
-($Myage >= 17)
-{echo "buy sausage rolls";}
-    else {echo "this is not for you";}
+        if ($myage == 30) {
+            echo "buy specs";
+        }
+    elseif ($myage < 17) {
+        echo "buy mugs";
+    }
+elseif ($myage >= 17) {
+    echo "buy sausage rolls";
+}
+    else {
+        echo "this is not for you";
+    }
 ?>
 
 </body>
