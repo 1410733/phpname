@@ -35,7 +35,7 @@
 
 <?php
     $myage= "17";
-        if ($Myage =25)
+        if ($Myage =30)
         {echo "buy specs";}
     elseif
 ($myage < 17)
