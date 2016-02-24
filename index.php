@@ -13,17 +13,25 @@
 <p>
     <?php
     echo "<p>Hello World</p>";
-    echo "<p>I am Here"."Not much of a fun"."<p>Ba damuwa</p>";
+    echo "I am Here"."Not much of a fun"."Ba damuwa";
+
     echo 5 * 7;
     $myname= "Modee Santuraki";
     $Myage= 200;
     echo "My name is" ." ". $myname . " "."and I am " . $Myage;
+    ?>
+    </p>
+
+
+    <p>
+    <?php
     $name = "Dimocee";
     if ($name == "Iliya")
-        { echo "I know you!";}
-        else
-        { print "who are you?";}
+    { echo "I know you!";}
+    else
+    { print "who are you?";}
     ?>
 </p>
+
 </body>
 </html>
