@@ -19,8 +19,10 @@
     $Myage= 200;
     echo "My name is" ." ". $myname . " "."and I am " . $Myage;
     $name = "Dimocee";
-    if ($name == "Iliya") { echo "I know you!"};
-        else { print "who are you?"};
+    if ($name == "Iliya")
+        { echo "I know you!";}
+        else
+        { print "who are you?";}
     ?>
 </p>
 </body>
