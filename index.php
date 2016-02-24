@@ -15,6 +15,9 @@
     echo "Hello World";
     echo "I am Here"."Not much of a fun"."Ba damuwa";
     echo 5 * 7;
+    $myname= "Modee Santuraki";
+    $Myage= 200;
+    echo "My name is" . "and I am " . $Myage;
     ?>
 </p>
 </body>
