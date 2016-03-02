@@ -17,6 +17,7 @@ if (empty ($_POST["username"]) || empty ($_POST["password"])) {
 }
 if (mysqli_num_rows($result) == 1) {
     header("location: home.php"); // Redirecting to another page
+    echo "hello";
 } else {
     echo "Incorrect username or password.";
 }
