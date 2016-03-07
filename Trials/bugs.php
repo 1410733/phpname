@@ -22,6 +22,22 @@
     {
         print "Who the fuck are you? ";
     }
+
+    $Firstage = 16;
+    $secondage = 18;
+    $Thirdage = 21;
+    if ($Firstage >= 16)  {
+        Print "Buy specs";
+    }
+    elseif ($secondage == 18) {
+        Print "Buy mugs";
+    }
+    elseif ($Thirdage <= 21) {
+        print "Fuck off";
+    }
+    else
+    print "Nothing for you all";
+
 ?>
 </p>
 
