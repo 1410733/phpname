@@ -91,10 +91,10 @@
 
     $provisionedactivities = array ("specs","drugs", "Rock and roll");
     echo $provisionedactivities[0];
-    break;
     echo $provisionedactivities[1];
-    break;
     echo $provisionedactivities[2];
+    $provisionedactivities = "hugs";
+    echo $provisionedactivities[0];
 
 
 
