@@ -68,7 +68,7 @@
         default:
             echo "not working ";
     }
-    if ($wantedgood == "mugs") {
+    if ($wantedgood == "specs") {
         print "you have to be 18 to buy mugs";
     }
     elseif
