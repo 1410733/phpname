@@ -54,7 +54,7 @@
     }
 
 
-    $wantedgood = "mugs" ;
+    $wantedgood = "specs" ;
     switch ($wantedgood) {
         case 1:
             echo "16 buy specs";
@@ -68,7 +68,7 @@
         default:
             echo "not working ";
     }
-    if ($wantedgood == "specs") {
+    if ($wantedgood == "mugs") {
         print "you have to be 18 to buy mugs";
     }
     elseif
