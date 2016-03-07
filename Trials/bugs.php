@@ -54,7 +54,7 @@
     }
 
 
-    $wantedgood = 18 ;
+    $wantedgood = "mugs" ;
     switch ($wantedgood) {
         case 1:
             echo "16 buy specs";
