@@ -11,6 +11,7 @@
     echo "Hello," . " " . "Binta " . "!";
     echo 5 * 40;
     $myname = "Modee Santuraki";
+
     $myage = 231;
     echo "My name is" . $myname . "and I am" . $myage . "Years old";
 
@@ -51,6 +52,24 @@
         default:
             echo "All the cats are asleep";
     }
+    $Wantedgood = 16 ;
+    switch ($wantedgood) {
+        case 1:
+            echo "you have to be 16 to buy specs";
+            break;
+        case 2:
+            echo "you have to be 18 to buy mugs";
+            break;
+        case 3:
+            echo "you have to be 20 buy glass";
+            break;
+        default:
+            echo "fuck you all";
+    }
+
+
+
+
 
 
 
