@@ -62,9 +62,7 @@
             break;
         case 3:
             echo "you have to be 20 buy glass";
-            break;
-        default:
-            echo "fuck you all";
+
     }
 
 
