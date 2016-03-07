@@ -52,7 +52,7 @@
         default:
             echo "All the cats are asleep";
     }
-    $wantedgood = 20 ;
+    $wantedgood = 18 ;
     switch ($wantedgood) {
         case 1:
             echo "16 years to be to buy specs";
