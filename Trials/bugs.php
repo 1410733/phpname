@@ -64,7 +64,9 @@
             break;
         case 3:
             echo "20 you have to be buy glass";
-
+            break;
+        default:
+            echo "not working ";
     }
 
 
