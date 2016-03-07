@@ -52,13 +52,15 @@
         default:
             echo "All the cats are asleep";
     }
+
+
     $wantedgood = 18 ;
     switch ($wantedgood) {
         case 1:
             echo "16 years to be to buy specs";
             break;
         case 2:
-            echo "you have to be 18 to buy mugs";
+            echo "18 you have to be to buy mugs";
             break;
         case 3:
             echo "you have to be 20 buy glass";
