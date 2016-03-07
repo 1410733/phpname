@@ -90,7 +90,6 @@
 
 
     $provisionedactivities = array ("specs","drugs", "Rock and roll");
-    echo $provisionedactivities[0];
     echo $provisionedactivities[1];
     echo $provisionedactivities[2];
     $provisionedactivities = "hugs";
