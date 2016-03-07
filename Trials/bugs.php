@@ -63,7 +63,7 @@
             echo "18 you have to be to buy mugs";
             break;
         case 3:
-            echo "you have to be 20 buy glass";
+            echo "20 you have to be buy glass";
 
     }
 
