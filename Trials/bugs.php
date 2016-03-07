@@ -82,6 +82,9 @@
     else
         print "nothing more";
 
+    $myarray = array ("modi","Adda", "Yaya");
+    echo $myarray[0]
+
 
 
 
