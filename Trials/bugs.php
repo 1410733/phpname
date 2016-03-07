@@ -55,7 +55,7 @@
     $Wantedgood = 16 ;
     switch ($wantedgood) {
         case 1:
-            echo "you have to be 16 to buy specs";
+            echo "16 years to be to buy specs";
             break;
         case 2:
             echo "you have to be 18 to buy mugs";
