@@ -37,6 +37,23 @@
     }
     else
     print "Nothing for you all";
+    $numberofcats = 2;
+    switch ($numberofcats) {
+        case 1:
+            echo "1 sad cat";
+            break;
+        case 2:
+            echo "2 happy cats";
+            break;
+        case 3:
+            echo "3 cats are a crowd";
+            break;
+        default:
+            echo "All the cats are asleep";
+    }
+
+
+
 
 ?>
 </p>
