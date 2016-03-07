@@ -92,7 +92,7 @@
     $provisionedactivities = array ("specs","drugs", "Rock and roll");
     echo $provisionedactivities[1];
     echo $provisionedactivities[2];
-    $provisionedactivities = "hugs";
+    $provisionedactivities [0] = "hugs";
     echo $provisionedactivities[0];
 
 
