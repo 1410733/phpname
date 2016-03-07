@@ -37,7 +37,7 @@
     }
     else
     print "Nothing for you all";
-    $numberofcats = 2;
+    $numberofcats = 3;
     switch ($numberofcats) {
         case 1:
             echo "1 sad cat";
