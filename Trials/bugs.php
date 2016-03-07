@@ -68,6 +68,19 @@
         default:
             echo "not working ";
     }
+    if ($wantedgood == "mugs") {
+        print "you have to be 18 to buy mugs";
+    }
+    elseif
+    ($wantedgood == "specs") {
+        print "you have to be 19 to buys specs";
+    }
+    elseif
+    ($wantedgood == "glass") {
+        print "you have to be my age to get that shit";
+    }
+    else
+        print "nothing more";
 
 
 
