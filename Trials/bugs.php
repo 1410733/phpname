@@ -83,8 +83,9 @@
         print "nothing more";
 
     $myarray = array ("modi","Adda", "Yaya");
-    echo $myarray[1];
+
     $myarray[1] = "mumcy";
+    echo $myarray[1];
 
 
 
