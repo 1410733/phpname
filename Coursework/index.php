@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<h1>Welocome, Kindly sign in with your details below</h1>
+<h1>Welcome, Kindly log in with your details below</h1>
 <div class="loginBox">
     <h3>Login Form</h3>
     <br><br>
@@ -30,4 +30,3 @@
 </div>
 </body>
 </html>
-
