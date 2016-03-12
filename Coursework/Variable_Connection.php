@@ -10,5 +10,5 @@ define('DB_SERVER', 'santuraki.azurewebsites.net');
 define('DB_USERNAME', 'b76bb32cfc0469');
 define('DB_PASSWORD', '378ffb7b');
 define('DB_DATABASE', 'Santuraki 1410733');
-$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+$db = @mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
