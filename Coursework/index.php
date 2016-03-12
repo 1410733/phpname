@@ -1,3 +1,10 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: 1410733
+ * Date: 02/03/2016
+ * Time: 16:29
+ */?>
 <!doctype html>
 <html>
 <head>
@@ -7,7 +14,7 @@
 </head>
 
 <body>
-<h1>PHP Login Form with Session</h1>
+<h1>Welcome, this is just a trial</h1>
 <div class="loginBox">
     <h3>Login Form</h3>
     <br><br>
