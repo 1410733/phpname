@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<h1>PHP Login Form with Session</h1>
+<h1>Welocome, Kindly sign in with your details below</h1>
 <div class="loginBox">
     <h3>Login Form</h3>
     <br><br>
