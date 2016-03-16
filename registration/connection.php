@@ -1,14 +1,8 @@
 <?php
 define('DB_SERVER', 'eu-cdbr-azure-north-d.cloudapp.net');
-define('DB_USERNAME', 'be6a3e71586ff2');
-define('DB_PASSWORD', '15106d56');
-define('DB_DATABASE', 'Santuraki1410733');
+define('DB_USERNAME', 'b99256e599d9fc');
+define('DB_PASSWORD', '64c23a04');
+define('DB_DATABASE', 'rgutest');
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-
-// Check connection
-if (mysqli_connect_errno())
-{
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 
 ?>
