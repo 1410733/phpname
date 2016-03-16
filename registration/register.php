@@ -51,7 +51,7 @@
 				<tr>
 					<td height="23" style="font-weight: bold">
 						<div align="right">
-							<label for="password">Password</label>
+							<label for="password">Phone Number</label>
 						</div>
 					</td>
 					<td>
