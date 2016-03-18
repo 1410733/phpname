@@ -7,7 +7,7 @@
  */
 ?>
 <body>
-	<form method="post" action="">
+	<form method="post" action="" enctype="multipart/form-data">
 		<fieldset>
 		<legend>Bug Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
