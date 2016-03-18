@@ -21,7 +21,7 @@ if (empty ($_POST["username"]) || empty ($_POST["password"]))
 
     $sql="SELECT * FROM users WHERE username='$username' and password='$password'";
     $result = mysqli_query($db,$sql);
-    $result = mysqli_fetch_array($result);
+    $results = mysqli_fetch_array($result);
     echo $result['password'];
 
 if (mysqli_num_rows($result) == 1 ) {
