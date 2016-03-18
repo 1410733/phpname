@@ -9,6 +9,7 @@
 include ("connection.php");
 $msg = "";
 if(isset($_POST["submit"])) {
+    echo "two";
     $Bugtitle = $_POST["Bugtitle"];
     $BugDesc = $_POST["BugDesc"];
     $Attachment = $_POST["Attachment"];
