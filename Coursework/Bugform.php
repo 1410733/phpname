@@ -41,9 +41,7 @@ body>
             <label for="BugDesc">Bug Description</label>
         </div>
     </td>
-    <td>
-        <input name="Username" type="text" class="input" size="25" required />
-    </td>
+
 </tr>
 <tr>
     <td height="23" style="font-weight: bold">
@@ -51,9 +49,7 @@ body>
             <label for="Username">Username</label>
         </div>
     </td>
-    <td>
-        <input name="Dateposted" type="date" class="input" size="25" required />
-    </td>
+
 </tr>
 <tr>
     <td height="23" style="font-weight: bold">
