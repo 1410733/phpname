@@ -15,16 +15,23 @@
 					<td colspan="2" align="center" class="error"><?php echo $msg;?></td>
 </tr>
 <tr>
+    <td style="font-weight: bold">
+        <div align="right"><label for="name">Username</label></div>
+    </td>
     <td>
         <input name="Bug title" type="text" class="input" size="25" required />
     </td>
+</tr>
 
+<tr>
     <td style="font-weight: bold">
         <div align="right">
             <label for="Bug">Bug title</label>
         </div>
     </td>
-
+    <td>
+        <input name="BugDesc" type="text" class="input" size="25" required />
+    </td>
 </tr>
 
 
