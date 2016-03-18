@@ -13,7 +13,11 @@ if (empty ($_POST["username"]) || empty ($_POST["password"]))
 } else
 {
     $username=$_POST['username'];
-    $password=md5($_POST['password']);
+    $password=$_POST['password'];
+    $password = mysqli_real_escape_string($db, $password);
+    $password = md5($password);
+
+
     $sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
     $result = mysqli_query($db,$sql);
     $result = mysqli_fetch_assoc($result);
