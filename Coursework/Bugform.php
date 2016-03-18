@@ -61,6 +61,9 @@ body>
             <label for="Dateposted">Date Posted</label>
         </div>
     </td>
+    <td>
+        <input name="Dateposted" type="date" class="input" size="25" required />
+    </td>
 </tr>
 
 
