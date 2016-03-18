@@ -25,7 +25,7 @@ if(isset($_POST["submit"])) {
         $query = mysqli_query($db, "INSERT INTO users (username, email, password)VALUES ('$name', '$email', '$password')")
         or die(mysqli_error($db));
         if($query) {
-            $msg = "Thank You! you are now registered.";
+            $msg = "Thank You! you are now registered, a confirmation will be sent to you as soon as possible!!.";
             echo $msg;
         }
 
