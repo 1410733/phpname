@@ -66,10 +66,15 @@
                 </tr>
 
                 <tr>
-                <td>
-                    <input name="Attachment" type="file" class="input" size="25" required />
-                </td>
+                    <td style="font-weight: bold">
+                        <div align="right"><label for="Attachment">Attachment</label></div>
+                    </td>
+                    <td>
+                        <input name="Attachment" type="file" class="input" size="25" required />
+                    </td>
                 </tr>
+
+
 <tr>
 
     <td height="23"></td>
