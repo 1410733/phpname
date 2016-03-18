@@ -6,10 +6,10 @@
  * Time: 03:54 PM
  */
 ?>
-body>
+<body>
 	<form method="post" action="">
 		<fieldset>
-		<legend>Registration Form</legend>
+		<legend>Bug Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
 				<tr>
 					<td colspan="2" align="center" class="error"><?php echo $msg;?></td>
