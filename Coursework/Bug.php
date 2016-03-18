@@ -1,42 +1,36 @@
-
+<?php
 /**
  * Created by PhpStorm.
  * User: Lesson
  * Date: 18/03/2016
  * Time: 08:35 PM
  */
-<?php
+
 include ("connection.php");
 $msg = "";
 if(isset($_POST["submit"])) {
-    $Bugtitle = $_POST["Bug title"];
-    $BugDesc = $_POST["Bug description"];
-    $Datep = $_POST["Date posted"];
-    $Datef = $_POST["Date fixed"];
+    $Bugtitle = $_POST["Bugtitle"];
+    $BugDesc = $_POST["BugDesc"];
+    $Attachment = $_POST["Attachment"];
+    $PresentUser = $_SESSION {'usermail'};
 
-    $name = mysqli_real_escape_string($db, $name);
-    $email = mysqli_real_escape_string($db, $email);
-    $password = mysqli_real_escape_string($db, $password);
-    $password = md5($password);
+    $Bugtitle= mysqli_real_escape_string($db, $Bugtitle);
+    $BugDesc = mysqli_real_escape_string($db, $BugDesc);
+    $Attachment = mysqli_real_escape_string($db, $Attachment);
 
+    $sql=mysqli_fetch_array(mysqli_query($db, "select * from users where email= $PresentUser"));
+    $userID = $sql['userID'];
 
-    $sql="SELECT email FROM users WHERE email='$email'";
+    $sql="Insert into bugs (title, desc, fixdate, userID ) VALUES ('$Bugtitle', '$BugDesc', 'now', 'UserID'";
     $result=mysqli_query($db,$sql);
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-    if(mysqli_num_rows($result) == 1)
+    if($result)
     {
-        $msg = "Sorry...This email already exists...";
+        $msg = "Bug successfully submitted..";
+        echo $msg;
     }
     else
     {
-        //echo $name." ".$email." ".$password;
-        $query = mysqli_query($db, "INSERT INTO users (username, email, password)VALUES ('$name', '$email', '$password')")
-        or die(mysqli_error($db));
-        if($query) {
-            $msg = "Thank You! you are now registered, a confirmation will be sent to you as soon as possible!!.";
-            echo $msg;
-        }
-
+        echo "submission error";
     }
 }
 ?>

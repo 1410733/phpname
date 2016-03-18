@@ -7,7 +7,7 @@
  */
 ?>
 <body>
-	<form method="post" action="" enctype="multipart/form-data">
+	<form method="post" action="Bug.php" enctype="multipart/form-data">
 		<fieldset>
 		<legend>Bug Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
@@ -19,14 +19,14 @@
         <div align="right"><label for="name">Username</label></div>
     </td>
     <td>
-        <input name="Bug title" type="text" class="input" size="25" required />
+        <input name="Bugtitle" type="text" class="input" size="25" required />
     </td>
 </tr>
 
 <tr>
     <td style="font-weight: bold">
         <div align="right">
-            <label for="Bug">Bug title</label>
+            <label for="Bugtitle">Bug title</label>
         </div>
     </td>
     <td>
