@@ -42,7 +42,7 @@
         </div>
     </td>
     <td>
-        <input name="BugDesc" type="text" class="input" size="25" required />
+        <textarea cols="40" rows="4" name="BugDesc"  class="input" required > </textarea>
     </td>
 </tr>
 <tr>
