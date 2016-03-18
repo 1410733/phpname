@@ -73,7 +73,11 @@
                         <input name="Attachment" type="file" class="input" size="25" required />
                     </td>
                 </tr>
-
+<tr>
+    <td>
+        <input type="hidden" name="id" value="<?php echo $_SESSION['username']; ?>">
+    </td>
+</tr>
 
 <tr>
 
