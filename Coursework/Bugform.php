@@ -64,10 +64,12 @@
                         <input name="Datefixed" type="date" class="input" size="25" required />
                     </td>
                 </tr>
+
+                <tr>
                 <td>
                     <input name="Attachment" type="file" class="input" size="25" required />
                 </td>
-
+                </tr>
 <tr>
 
     <td height="23"></td>
