@@ -48,16 +48,6 @@
 <tr>
     <td height="23" style="font-weight: bold">
         <div align="right">
-            <label for="Username">Username</label>
-        </div>
-    </td>
-    <td>
-        <input name="Username" type="text" class="input" size="25" required />
-    </td>
-</tr>
-<tr>
-    <td height="23" style="font-weight: bold">
-        <div align="right">
             <label for="Dateposted">Date Posted</label>
         </div>
     </td>
@@ -65,7 +55,6 @@
         <input name="Dateposted" type="date" class="input" size="25" required />
     </td>
 </tr>
-
 
                 <tr>
                     <td style="font-weight: bold">
@@ -75,8 +64,6 @@
                         <input name="Datefixed" type="date" class="input" size="25" required />
                     </td>
                 </tr>
-
-
 
 
 <tr>
