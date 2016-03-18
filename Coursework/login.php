@@ -1,11 +1,11 @@
-
+<?php
 /**
  * Created by PhpStorm.
  * User: 1410733
  * Date: 02/03/2016
  * Time: 15:59
  */
-<?php
+
 include("connection.php");
 if (empty ($_POST["username"]) || empty ($_POST["password"]))
 {
