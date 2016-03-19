@@ -2,6 +2,8 @@
 
 <?php
 SESSION_START ();
+
+$username= $_SESSION['username'] ;
 ?>
 
 <!doctype html>
