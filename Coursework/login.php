@@ -5,9 +5,10 @@
  * Date: 02/03/2016
  * Time: 15:59
  */
+SESSION_START();
 
 include("connection.php");
-    SESSION_START ();
+
 if (empty ($_POST["username"]) || empty ($_POST["password"]))
 {
     echo "Both fields are required.";

@@ -1,7 +1,7 @@
 
 
 <?php
-SESSION_START ();
+SESSION_START();
 
 $username= $_SESSION['username'] ;
 ?>
