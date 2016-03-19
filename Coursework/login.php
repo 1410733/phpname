@@ -17,7 +17,7 @@ if (empty ($_POST["username"]) || empty ($_POST["password"]))
     $password=$_POST['password'];
     $password = mysqli_real_escape_string($db, $password);
     $password = md5($password);
-    $_SESSION['usermail'] = $usermail;
+    $_SESSION['usermail'] = $username;
 
 
     $sql="SELECT * FROM users WHERE username='$username' and password='$password'";
