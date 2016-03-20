@@ -31,8 +31,10 @@ if(isset($_POST["submit"])) {
 
     while ($rows = mysqli_fetch_array($query2)) {
         $xname = $rows['username'];
+        $xid  = $rows['userID'];
 
         echo $xname;
+        echo $xid;
     }
 
   //  echo "two";
