@@ -29,6 +29,7 @@ if(isset($_POST["submit"])) {
   //  echo "two";
     $sql="Insert into bugs (title, descr, postDate, userID ) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')";
     $result=mysqli_query($db,$sql);
+    echo "two";
     if($result)
     {
         $msg = "Bug successfully submitted..";
