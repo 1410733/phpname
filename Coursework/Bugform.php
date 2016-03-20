@@ -20,10 +20,7 @@ $username= $_SESSION['username'] ;
 				<tr>
 					<td colspan="2" align="center" class="error"><?php echo $msg;?></td>
 </tr>
-<tr>
-    <td style="font-weight: bold">
-        <div align="right"><label for="name">Username</label></div>
-    </td>
+    <<tr>
     <td>
         <input name="Bugtitle" type="text" class="input" size="25" required />
     </td>
