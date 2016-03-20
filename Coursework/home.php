@@ -15,9 +15,9 @@ $username= $_SESSION['username'] ;
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-
 <body>
 <a href="Bugform.php">Create Bug</a>
+<a href="logout.php">Signout</a>
 <?php echo $_SESSION["username"] . " ";?><h1>you have finally broke through... </h1>
 
 
