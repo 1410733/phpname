@@ -12,6 +12,7 @@ $username= $_SESSION['username'] ;
 ?>
 <body>
 <?php echo $_SESSION["username"] . " ";?>
+<a href="logout.php">Signout</a>
 	<form method="post" action="Bug.php" enctype="multipart/form-data">
 		<fieldset>
 		<legend>Bug Form</legend>
