@@ -34,7 +34,7 @@ if(isset($_POST["submit"])) {
         $xid  = $rows['userID'];
 
         echo $xname;
-        echo $xid;
+        echo "The userID is = $xid<br>";
     }
 
   //  echo "two";
