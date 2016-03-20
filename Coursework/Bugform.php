@@ -75,7 +75,7 @@ $username= $_SESSION['username'] ;
                         <div align="right"><label for="Attachment">Attachment</label></div>
                     </td>
                     <td>
-                        <input name="Attachment" type="file" class="input" size="25" required />
+                        <input name="Attachment" type="file" class="input" size="25" />
                     </td>
                 </tr>
 <tr>
