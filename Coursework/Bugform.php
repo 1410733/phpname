@@ -5,8 +5,13 @@
  * Date: 18/03/2016
  * Time: 03:54 PM
  */
+SESSION_START();
+
+$username= $_SESSION['username'] ;
+
 ?>
 <body>
+<?php echo $_SESSION["username"] . " ";?>
 	<form method="post" action="Bug.php" enctype="multipart/form-data">
 		<fieldset>
 		<legend>Bug Form</legend>
