@@ -40,23 +40,14 @@ $username= $_SESSION['username'] ;
         <textarea cols="40" rows="4" name="BugDesc"  class="input" required > </textarea>
     </td>
 </tr>
-<tr>
-    <td height="23" style="font-weight: bold">
-        <div align="right">
-            <label for="Dateposted">Date Posted</label>
-        </div>
-    </td>
-    <td>
-        <input name="Dateposted" type="date" class="input" size="25" required />
-    </td>
-</tr>
+
 
                 <tr>
                     <td style="font-weight: bold">
                         <div align="right"><label for="Datefixed">Date Fixed</label></div>
                     </td>
                     <td>
-                        <input name="Datefixed" type="date" class="input" size="25" required />
+                        <input name="Datefixed" type="date" class="input" size="25" />
                     </td>
                 </tr>
 
