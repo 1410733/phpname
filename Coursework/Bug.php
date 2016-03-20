@@ -41,9 +41,6 @@ if(isset($_POST["submit"])) {
         $msg = "Bug successfully submitted..";
         echo $msg;
     }
-    else
-    {
-        echo "submission error";
-    }
+
 }
 ?>
