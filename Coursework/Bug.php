@@ -35,7 +35,6 @@ if(isset($_POST["submit"])) {
 
 
 
-    echo "two";
     if($query)
     {
         $msg = "Bug successfully submitted..";
