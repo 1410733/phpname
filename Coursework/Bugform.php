@@ -21,23 +21,13 @@ $username= $_SESSION['username'] ;
 </tr>
 <tr>
     <td style="font-weight: bold">
-        <div align="right"><label for="name">Username</label></div>
+        <div align="right"><label for="Bugtitle">Bug title</label></div>
     </td>
     <td>
         <input name="Bugtitle" type="text" class="input" size="25" required />
     </td>
 </tr>
 
-<tr>
-    <td style="font-weight: bold">
-        <div align="right">
-            <label for="Bugtitle">Bug title</label>
-        </div>
-    </td>
-    <td>
-        <input name="BugDesc" type="text" class="input" size="25" required />
-    </td>
-</tr>
 
 
 <tr>
