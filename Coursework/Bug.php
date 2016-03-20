@@ -50,7 +50,6 @@ if(isset($_POST["submit"])) {
     {
         $msg = "Bug successfully submitted..";
         echo "<br>$msg<br>";
-        echo $PresentUser;
     }
     else
     {
