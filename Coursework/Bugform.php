@@ -42,14 +42,14 @@ $username= $_SESSION['username'] ;
 </tr>
 
 
-                <tr>
+              <!--  <tr>
                     <td style="font-weight: bold">
                         <div align="right"><label for="Datefixed">Date Fixed</label></div>
                     </td>
                     <td>
                         <input name="Datefixed" type="date" class="input" size="25" />
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
                     <td style="font-weight: bold">
