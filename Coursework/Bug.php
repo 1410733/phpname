@@ -30,7 +30,7 @@ if(isset($_POST["submit"])) {
     //$sql="Insert into bugs (title, descr, postDate, userID ) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')" or die(mysqli_error($db));
    // $result=mysqli_query($db,$sql);
 
-    $query = mysqli_query($db, "INSERT INTO users (title, descr, postDate, userID) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')")
+    $query = mysqli_query($db, "INSERT INTO bugs (title, descr, postDate, userID) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')")
     or die(mysqli_error($db));
 
 
