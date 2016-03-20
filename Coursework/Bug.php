@@ -17,7 +17,7 @@ if(isset($_POST["submit"])) {
     $BugDesc = $_POST["BugDesc"];
     $Attachment = $_POST["Attachment"];
     $PresentUser = $_SESSION['username'] ;
-    $userID = 2;
+
 
     $Bugtitle= mysqli_real_escape_string($db, $Bugtitle);
     $BugDesc = mysqli_real_escape_string($db, $BugDesc);
@@ -30,7 +30,7 @@ if(isset($_POST["submit"])) {
     //$sql="Insert into bugs (title, descr, postDate, userID ) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')" or die(mysqli_error($db));
    // $result=mysqli_query($db,$sql);
 
-    $query = mysqli_query($db, "INSERT INTO bugs (title, descr, postDate, userID) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')")
+    $query = mysqli_query($db, "INSERT INTO bugs (title, descr, postDate) VALUES ('$Bugtitle', '$BugDesc', now())")
     or die(mysqli_error($db));
 
 
