@@ -27,7 +27,7 @@ if(isset($_POST["submit"])) {
     //$userID = $sql['userID'];
    // echo $userID;
   //  echo "two";
-    $sql="Insert into bugs (title, descr, postDate, userID ) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')";
+    $sql="Insert into bugs (title, descr, postDate, userID ) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')" or die(mysqli_error($db));
     $result=mysqli_query($db,$sql);
     echo "two";
     if($result)
