@@ -17,9 +17,6 @@ $username= $_SESSION['username'] ;
 		<fieldset>
 		<legend>Bug Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
-				<tr>
-					<td colspan="2" align="center" class="error"><?php echo $msg;?></td>
-</tr>
     <tr>
     <td>
         <input name="Bugtitle" type="text" class="input" size="25" required />
