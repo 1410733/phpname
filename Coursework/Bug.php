@@ -27,7 +27,7 @@ if(isset($_POST["submit"])) {
    // $userID = $sql['userID'];
   // echo $userID;
 
-    $query2 = mysqli_query("SELECT * FROM users WHERE username = $PresentUser");
+    $query2 = mysqli_query("SELECT * FROM users WHERE username = '$PresentUser'");
 
     while ($rows = mysqli_fetch_array($query2)) {
         $xname = $rows['username'];
