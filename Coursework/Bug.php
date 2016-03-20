@@ -33,7 +33,7 @@ if(isset($_POST["submit"])) {
         $xname = $rows['username'];
         $xid  = $rows['userID'];
 
-        echo $xname;
+        echo "The username selected is = $xname<br>";
         echo "The userID is = $xid<br>";
     }
 
@@ -49,7 +49,7 @@ if(isset($_POST["submit"])) {
     if($query)
     {
         $msg = "Bug successfully submitted..";
-        echo $msg;
+        echo "<br>$msg<br>";
         echo $PresentUser;
     }
     else
