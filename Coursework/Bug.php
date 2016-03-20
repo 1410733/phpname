@@ -23,9 +23,9 @@ if(isset($_POST["submit"])) {
     $BugDesc = mysqli_real_escape_string($db, $BugDesc);
     $Attachment = mysqli_real_escape_string($db, $Attachment);
 
-   // $sql=mysqli_fetch_array(mysqli_query($db, "select userID from users where username= $PresentUser"));
-    //$userID = $sql['userID'];
-   // echo $userID;
+   $sql=mysqli_fetch_array(mysqli_query($db, "select userID from users where username= $PresentUser"));
+    $userID = $sql['userID'];
+   echo $userID;
   //  echo "two";
     //$sql="Insert into bugs (title, descr, postDate, userID ) VALUES ('$Bugtitle', '$BugDesc', now(), '$userID')" or die(mysqli_error($db));
    // $result=mysqli_query($db,$sql);
