@@ -9,7 +9,7 @@
 include ("connection.php");
 $msg = "";
 if(isset($_POST["submit"])) {
-    echo "two";
+
     $Bugtitle = $_POST["Bugtitle"];
     $BugDesc = $_POST["BugDesc"];
     $Attachment = $_POST["Attachment"];
@@ -22,7 +22,7 @@ if(isset($_POST["submit"])) {
     $sql=mysqli_fetch_array(mysqli_query($db, "select * from users where email= $PresentUser"));
     $userID = $sql['userID'];
     echo $userID;
-
+    echo "two";
     $sql="Insert into bugs (title, desc, fixdate, userID ) VALUES ('$Bugtitle', '$BugDesc', 'now', 'UserID'";
     $result=mysqli_query($db,$sql);
     if($result)
