@@ -38,7 +38,7 @@ if ((isset($_SESSION['username']) != ''))
     </form>
     <br>
     <br>
-    <p>Not a member? kindly click <a href="register.php">Here </a></p>
+    <p>Not a member? kindly click <a href="register.php">Here </a> to register with us</p>
     <div class="error"><?php //echo $error;?><?php //echo $username; echo $password;?></div>
 
 </div>
