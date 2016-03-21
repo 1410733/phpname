@@ -18,7 +18,8 @@ $username= $_SESSION['username'] ;
 <body>
 <a href="Bugform.php">Create Bug</a>
 <a href="logout.php">Signout</a>
-<?php echo $_SESSION["username"] . " ";?><h1>you have finally broke through... </h1>
+<p> Hello <?php echo $_SESSION["username"] . " ";?> </p>
+<h1>you have finally broke through... </h1>
 
 
 </body>
