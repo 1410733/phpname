@@ -1,10 +1,24 @@
 
-/**
+<!--/*
  * Created by PhpStorm.
  * User: 1410733
  * Date: 02/03/2016
  * Time: 16:29
- */
+ */-->
+
+<?php
+include('login.php'); // Include Login Script
+
+if ((isset($_SESSION['username']) != ''))
+{
+    header('Location: home.php');
+}
+?>
+
+
+
+
+
 <!doctype html>
 <html>
 <head>
