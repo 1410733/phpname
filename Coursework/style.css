@@ -1,6 +1,8 @@
 
 h1 {
-	color: deepskyblue;
+	font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	font-size:20px;
+	font-weight:bold;
 }
 
 
