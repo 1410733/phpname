@@ -8,7 +8,6 @@
 SESSION_START();
 
 
-
 include ("connection.php");
 $msg = "";
 if(isset($_POST["submit"])) {
@@ -29,7 +28,7 @@ if(isset($_POST["submit"])) {
 
     while ($rows = mysqli_fetch_array($query2)) {
         $xname = $rows['username'];
-        $xid  = $rows['userID'];
+        $xid = $rows['userID'];
 
         echo "The username selected is = $xname<br>";
         echo "The userID is = $xid<br>";
@@ -52,3 +51,18 @@ if(isset($_POST["submit"])) {
     }
 }
 ?>
+
+<?php
+
+//File properties
+$file = $_FILES['Attachment']['tmp_name'];
+if (!isset($file))
+    echo "kindly select a file.";
+  else
+  {
+      $attachment =file_get_contents $_FILES['Attachment']['tmp_name'];
+      $Attachment_name = $_FILES['Attachment']['name'];
+
+
+  }
+
