@@ -16,9 +16,6 @@ if ((isset($_SESSION['username']) != ''))
 ?>
 
 
-
-
-
 <!doctype html>
 <html>
 <head>
@@ -39,6 +36,9 @@ if ((isset($_SESSION['username']) != ''))
         <input type="password" name="password" placeholder="password" />  <br><br>
         <input type="submit" name="submit" value = "login"/>
     </form>
+    <br>
+    <br>
+    <p>Not a member? kindly click <a href="register.php">Here </a></p>
     <div class="error"><?php //echo $error;?><?php //echo $username; echo $password;?></div>
 
 </div>
