@@ -29,7 +29,7 @@ if(isset($_POST["submit"])) {
         }
     $Bugtitle = $_POST["Bugtitle"];
     $BugDesc = $_POST["BugDesc"];
-    $Attachment = $_POST["Attachment"];
+    $Attachment = $_POST['Attachment'];
     $PresentUser = $_SESSION['username'] ;
 
     $Bugtitle= mysqli_real_escape_string($db, $Bugtitle);
