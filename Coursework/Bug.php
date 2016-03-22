@@ -10,8 +10,7 @@ SESSION_START();
 
 include ("connection.php");
 $msg = "";
-
-    if(isset($_POST["submit"])) {
+if(isset($_POST["submit"])) {
 
         if (getimagesize($_FILES['image']['tmp_name'])== FALSE)
         {
@@ -28,13 +27,10 @@ $msg = "";
             fclose($fp);
             move_uploaded_file($dir, $location.$file_name);
         }
-
-
     $Bugtitle = $_POST["Bugtitle"];
     $BugDesc = $_POST["BugDesc"];
     $Attachment = $_POST["Attachment"];
     $PresentUser = $_SESSION['username'] ;
-
 
     $Bugtitle= mysqli_real_escape_string($db, $Bugtitle);
     $BugDesc = mysqli_real_escape_string($db, $BugDesc);
@@ -44,11 +40,9 @@ $msg = "";
     while ($rows = mysqli_fetch_array($query2)) {
         $xname = $rows['username'];
         $xid = $rows['userID'];
-
         echo "The username selected is = $xname<br>";
         echo "The userID is = $xid<br>";
     }
-
 
     $query = mysqli_query($db, "INSERT INTO bugs (title, descr, postDate, userID) VALUES ('$Bugtitle', '$BugDesc', now(), '$xid')")
     or die(mysqli_error($db));
