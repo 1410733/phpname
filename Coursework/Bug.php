@@ -55,14 +55,31 @@ if(isset($_POST["submit"])) {
 <?php
 
 //File properties
-$file = $_FILES['Attachment']['tmp_name'];
-if (!isset($file))
-    echo "kindly select a file.";
-  else
-  {
-      $attachment =file_get_contents $_FILES['Attachment']['tmp_name'];
-      $Attachment_name = $_FILES['Attachment']['name'];
+if(!isset($_POST['submit'])) {
+    if(getimagesize($_FILES['Attachment']['tmp_name']))== FALSE)
 
+    {
+        echo "Kindly choose an image";
+}
+    else
+    {
+        $image = addslashes($_FILES['image']['tmp_name']);
+        $name= addslashes($_FILES['image']['name']);
+        $image=file_get_contents($image);
+        $image=base64_decode($image);
+        $saveimages($image);
+    }
 
-  }
-
+}
+    function save image($name,$image)
+{
+    $qry=mysqli_query($db,"Insert INTO attachment (URL, userID, BugID) VALUES ('$image', '$xid', NULL )")
+    $result=mysqli_query($qry,$db);
+if($result)
+{
+    echo "<br/>Image uploaded successfully";
+} else
+{
+    echo "you got a problem";
+}
+}

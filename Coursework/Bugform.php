@@ -37,7 +37,7 @@ $username= $_SESSION['username'] ;
         </div>
     </td>
     <td>
-        <textarea cols="40" rows="4" name="BugDesc"  class="input" required > </textarea>
+        <textarea cols="40" rows="4" name="BugDesc"  class="input"  > </textarea>
     </td>
 </tr>
 
