@@ -13,7 +13,7 @@ $username= $_SESSION['username'] ;
 <body>
 <?php echo $_SESSION["username"] . " ";?>
 	<form method="post" action="Bug.php" enctype="multipart/form-data">
-        <input type="hidden" name="Attachment" value="<?php echo $username; ?>" >
+        <input type="hidden" name="Attachment" value="2000000?>" >
 		<fieldset>
 		<legend>Bug Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
