@@ -38,9 +38,6 @@ $msg = "";
 
     $Bugtitle= mysqli_real_escape_string($db, $Bugtitle);
     $BugDesc = mysqli_real_escape_string($db, $BugDesc);
-    $Attachment = mysqli_real_escape_string($db, $Attachment);
-
-
 
     $query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$PresentUser'") or die (mysqli_error($db));
 
@@ -83,7 +80,6 @@ while ($runsql = mysqli_fetch_array($sql1)) {
         echo "submission error";
     }
 
-    }
 }
 
 ?>
