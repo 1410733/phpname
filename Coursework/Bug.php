@@ -8,7 +8,7 @@
 SESSION_START();
 
 
-include ("connection.php");
+include ("login.php");
 $msg = "";
 if(isset($_POST["submit"])) {
 
