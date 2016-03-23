@@ -12,11 +12,11 @@ include ("login.php");
 $msg = "";
 if(isset($_POST["submit"])) {
 
-        if (getimagesize($_FILES['image']['tmp_name'])== FALSE)
-        {
-            echo "Please select an image.";
-        }
-        else {
+        //if (getimagesize($_FILES['image']['tmp_name'])== FALSE)
+        //{
+          //  echo "Please select an image.";
+        //}
+        //else {
 
             $file_name = $_FILES['image']['name'];
             $dir = $_FILES['image']['tmp_name'];
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])) {
             $content = addslashes($content);
             fclose($fp);
             move_uploaded_file($dir, $location.$file_name);
-        }
+       // }
     $Bugtitle = $_POST["Bugtitle"];
     $BugDesc = $_POST["BugDesc"];
     $Attachment = $_POST['Attachment'];
