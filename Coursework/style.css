@@ -1,11 +1,10 @@
 a:hover {
 	color: darkgrey;
+	text-decoration: none;
 }
 
 body
 {
-	background-color: #b2b2b2;
-	link: none;
 
 }
 
