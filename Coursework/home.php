@@ -21,7 +21,11 @@ $username= $_SESSION['username'] ;
 <a href="Bugform.php">Create Bug</a>
 <a href="logout.php">Signout</a>
 
-<h1>you have finally broke through... </h1>
+<h1>Welcome to bug tracker website </h1>
+<br>
+<p>This website allows you to submit all the bugs you found, provide a solution to an existing bug
+also comment all other bugs</p>
+
 
 
 </body>
