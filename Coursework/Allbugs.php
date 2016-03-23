@@ -21,9 +21,3 @@ while($row = mysqli_fetch_assoc($result)) {
     echo "<a href='Allbugs2.php?id=" . $bugID . "'>" . $bugtitle . "</a></br>";
 }
 ?>
-
-
-<?php
-
-
-    $newsql= "select * from comments WHERE "
