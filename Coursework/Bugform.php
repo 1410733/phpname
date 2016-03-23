@@ -25,7 +25,7 @@ $username= $_SESSION['username'] ;
         <div align="right"><label for="Bugtitle">Bug title</label></div>
     </td>
     <td>
-        <input name="Bugtitle" type="text" class="input" size="25" required />
+        <input name="Bugtitle" type="text" class="input" size="25"  />
     </td>
 </tr>
 
