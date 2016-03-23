@@ -16,7 +16,7 @@ $username= $_SESSION['username'] ;
 
 </head>
 <body>
-<p> Hello <?php echo $_SESSION["username"] . " ";?> </p>
+<p> Hello <em><?php echo $_SESSION["username"] . " ";?> </p></em>
 <br>
 <a href="Bugform.php">Create Bug</a>
 <a href="logout.php">Signout</a>
