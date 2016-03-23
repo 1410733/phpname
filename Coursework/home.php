@@ -25,6 +25,7 @@ $username= $_SESSION['username'] ;
 <br>
 <p>This website allows you to submit all the bugs you found, provide a solution to an existing bug
 also comment all other bugs</p>
+<p>To submit a bug, kindly click "create bug" at the top of the page</p>
 
 
 

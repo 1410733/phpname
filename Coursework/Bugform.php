@@ -11,6 +11,7 @@ $username= $_SESSION['username'] ;
 
 ?>
 <body>
+<a href="logout.php">Signout</a>
 <?php echo $_SESSION["username"] . " ";?>
 	<form method="post" action="Bug.php" enctype="multipart/form-data">
         <input type="hidden" name="Attachment" value="<?php echo $username; ?>" >
