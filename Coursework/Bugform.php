@@ -23,7 +23,7 @@ $username= $_SESSION['username'] ;
 </tr>
 <tr>
     <td style="font-weight: bold">
-        <div align="right"><label for="Bugtitle">Bug title</label></div>
+        <div align="center"><label for="Bugtitle">Bug title</label></div>
     </td>
     <td>
         <input name="Bugtitle" type="text" class="input" size="25"  />
@@ -55,7 +55,7 @@ $username= $_SESSION['username'] ;
 
                 <tr>
                     <td style="font-weight: bold">
-                        <div align="right"><label for="Attachment">Attachment</label></div>
+                        <div align="center"><label for="Attachment">Attachment</label></div>
                     </td>
                     <td>
                         <input name="image" type="file" class="input" size="25" />
@@ -71,7 +71,7 @@ $username= $_SESSION['username'] ;
 
     <td height="23"></td>
     <td>
-        <div align="right">
+        <div align="center">
             <input type="submit" name="submit" value="Submit" />
         </div>
     </td>
