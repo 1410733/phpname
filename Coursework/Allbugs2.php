@@ -23,8 +23,31 @@ $bugdesc = $row['descr'];
 
 echo "<h2>".$bugtitle."</h2>";
 echo "<p>".$bugdesc."</p>";
-echo "<p> Comments </p>";
-
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dimoce</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Kindly leave a comment...</legend>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="" />
+        <br>
+        <label for="comments">Comment:</label>
+        <textarea name="comments" cols="45" rows="5"></textarea>
+        <br>
+        <input type="submit" value="Submit" />
+    </fieldset>
+</form>
+</body>
+</html>
+
+
+
 
