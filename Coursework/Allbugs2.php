@@ -33,7 +33,7 @@ echo "<p>".$bugdesc."</p>";
     <title>Dimoce</title>
 </head>
 <body>
-<form>
+<form method="post" action="allbugs2.php">
     <fieldset>
         <legend>Kindly leave a comment...</legend>
         <label for="name">Name:</label>
