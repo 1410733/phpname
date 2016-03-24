@@ -61,7 +61,7 @@ while ($runsql = mysqli_fetch_array($sql1)) {
         }
         else
         {
-            echo "<br/>Image Not Uploaded.";
+           // echo "<br/>Image Not Uploaded.";
         }
 
     if($query)
