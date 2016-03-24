@@ -63,5 +63,5 @@ echo "<p>".$bugdesc."</p>";
         echo '<h3>'.$commenttitle.'</h3>';
         echo '<p>'.$comment.'</p>';
     }
-
+?>
 
