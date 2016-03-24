@@ -50,6 +50,18 @@ echo "<p>".$bugdesc."</p>";
 </body>
 </html>
 
-
+<?php
+//Select everything from our bugs table where ID is right
+    $sql="select * from comments WHERE bugID=".$_GET["id"];
+//fetch our result from the database
+    $result=mysqli_query($db,$sql);
+//Scan through each row in the response
+    while ($row=mysqli_fetch_assoc($result)){
+        $commenttitle=$row['title'];
+        $comment=$row['comment'];
+        //link to the page
+        echo '<h3>'.$commenttitle.'</h3>';
+        echo '<p>'.$comment.'</p>';
+    }
 
 
