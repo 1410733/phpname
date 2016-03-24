@@ -40,7 +40,7 @@ if(isset($_POST["submit"])) {
     while ($rows = mysqli_fetch_array($query2)) {
         $currentname = $rows['username'];
         $xid = $rows['userID'];
-        echo "The username selected is = $currentname<br>";
+        //echo "The username selected is = $currentname<br>";
        // echo "The userID is = $xid<br>";
     }
 
