@@ -41,7 +41,7 @@ if(isset($_POST["submit"])) {
         $currentname = $rows['username'];
         $xid = $rows['userID'];
         echo "The username selected is = $currentname<br>";
-        echo "The userID is = $xid<br>";
+       // echo "The userID is = $xid<br>";
     }
 
     $query = mysqli_query($db, "INSERT INTO bugs (title, descr, postDate, userID) VALUES ('$Bugtitle', '$BugDesc', now(), '$xid')")
