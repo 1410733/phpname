@@ -63,5 +63,10 @@ echo "<p>".$bugdesc."</p>";
         echo '<h3>'.$commenttitle.'</h3>';
         echo '<p>'.$comment.'</p>';
     }
+if ($sql) {
+    echo "Comments added successfully";
+}
+else
+    echo "Error in bug submission"
 ?>
 
