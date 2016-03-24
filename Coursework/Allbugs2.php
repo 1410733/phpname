@@ -23,7 +23,7 @@ $bugdesc = $row['descr'];
 
 echo "<h2>".$bugtitle."</h2>";
 echo "<p>".$bugdesc."</p>";
-echo "<p> Comments </p>"
+echo "<p> Comments </p>";
 
 
 ?>
