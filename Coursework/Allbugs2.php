@@ -22,7 +22,7 @@ include ("connection.php");
 include ("Allbugs.php");
 
 $sql = "select * from bugs WHERE bugID = ".$_GET['id'];
-$idd = $_POST["bugID"];
+$idd = $_POST["id"];
 echo $idd;
 echo "POST";
 
