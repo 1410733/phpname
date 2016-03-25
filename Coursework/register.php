@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<form method="post" action="submit.php">
+	<form method="post" action="submit.php" id = "formcss">
 		<fieldset>
 		<legend>Registration Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
