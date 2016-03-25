@@ -99,7 +99,6 @@ if(isset($_POST['submit'])){//to run PHP script on submit
    // $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
-    $intid=intval($bugID);
     // echo $currentBugID;
     //echo $uid;
     // echo $comment;
@@ -117,4 +116,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     // Close connection
     mysqli_close($db);
 }
+
+echo "the bug id is";
+echo $bugID;
 ?>
