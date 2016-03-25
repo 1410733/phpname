@@ -33,10 +33,9 @@
 			if(mysqli_num_rows($result) == 1)
 			{
 				$_SESSION['username'] = $username; // Initializing Session
-				$_SESSION['userID'] = $username; // Initializing Session
+				$_SESSION['userID'] = $userID; // Initializing Session
 				header("location: home.php"); // Redirecting To Other Page
 				//get user ID
-				$_SESSION["userID"] = $userID;//user id assigned to session global variable
 
 			}else
 			{
