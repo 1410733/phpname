@@ -17,6 +17,7 @@ while($row = mysqli_fetch_assoc($result)) {
     $bugtitle = $row['title'];
     $bugID = $row['bugID'];
 
+
     //write link to page
     echo "<a href='Allbugs2.php?id=" . $bugID . "'>" . $bugtitle . "</a></br>";
 }
