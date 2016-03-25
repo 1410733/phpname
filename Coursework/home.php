@@ -4,7 +4,6 @@
 SESSION_START();
 
 $username= $_SESSION['username'] ;
-$userID=$_SESSION['userID'];
 ?>
 
 <!doctype html>
@@ -18,7 +17,7 @@ $userID=$_SESSION['userID'];
 </head>
 <body>
 <p> Hello <em><?php echo $_SESSION["username"] . " ";?> </p></em>
-<p> Hello <em><?php echo $_SESSION["userID"] . " ";?> </p></em>
+
 <br>
 <a href="Bugform.php">Report a Bug</a>
 <a href="Allbugs.php">Submitted Bugs</a>
