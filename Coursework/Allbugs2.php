@@ -59,6 +59,9 @@ echo "<p>".$bugdesc."</p>";
 //Select everything from our bugs table where ID is right
     $sql="select * from comments WHERE bugID=".$_GET["id"];
 //fetch our result from the database
+
+//get bugid
+$bugID=$_GET["id"];
     $result=mysqli_query($db,$sql);
 //Scan through each row in the response
     while ($row=mysqli_fetch_assoc($result)){
@@ -79,7 +82,7 @@ else
 
 if(isset($_POST['submit'])){//to run PHP script on submit
     //get variables for comment table
-    $bugID= $_GET["id"];
+   // $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
 
