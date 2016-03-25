@@ -88,7 +88,7 @@ $userid=$_SESSION["userid"];
                     //echo $uid;
                     // echo $comment;
 
-                    $qry="INSERT  INTO bjtscomments(bugID, uid, bjtscomment) VALUES ('$currentBugID', '$uid','$comment')";
+                    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$currentBugID', '$userid','$comment', now())";
 
                     if(mysqli_query($db, $qry)){
                         echo "Records added successfully.";
@@ -96,7 +96,7 @@ $userid=$_SESSION["userid"];
                         //redirect user to login screen
                         //header("location: index.php");
                     } else{
-                        echo "ERROR: Could not be able to execute";//.$qry. mysqli_error($db);
+                        echo "ERROR: Could not be able to execute".$qry. mysqli_error($db);
                     }
                     // Close connection
                     mysqli_close($db);
