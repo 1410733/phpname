@@ -1,6 +1,5 @@
 <?php
 session_start();
-$useID=$_SESSION['userID'];
 ?>
 
 <?php
@@ -11,6 +10,7 @@ $useID=$_SESSION['userID'];
  * Time: 08:40
  */
 //$uID=$_SESSION["userID"];
+$useID=$_SESSION["userID"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
