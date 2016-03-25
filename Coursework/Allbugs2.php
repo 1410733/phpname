@@ -36,33 +36,10 @@ $bugdesc = $row['descr'];
 echo "<h2>".$bugtitle."</h2>";
 echo "<p>".$bugdesc."</p>";
 
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dimoce</title>
-</head>
-<body>
-<form method="post" action="allbugs2.php">
-    <fieldset>
-        <legend>Kindly leave a comment...</legend>
-        <label for="name">Name:</label>
-        <input type="text" name="name" value="" />
-        <br>
-        <br>
-        <label for="comments">Comment:</label>
-        <textarea name="comment" cols="45" rows="5"></textarea>
-        <br>
-        <br>
-        <input type="submit" name="submit" value="Submit" />
-    </fieldset>
-</form>
-</body>
-</html>
 
-<?php
+
+
 
 $currentUser = $_SESSION['username'];
 
@@ -137,3 +114,30 @@ echo $idd;
 echo "the bug id is";
 echo $bugID;
 ?>
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dimoce</title>
+</head>
+<body>
+<form method="post" action="allbugs2.php">
+    <fieldset>
+        <legend>Kindly leave a comment...</legend>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="" />
+        <br>
+        <br>
+        <label for="comments">Comment:</label>
+        <textarea name="comment" cols="45" rows="5"></textarea>
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Submit" />
+    </fieldset>
+</form>
+</body>
+</html>
+
