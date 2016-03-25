@@ -19,10 +19,7 @@ session_start();
 
 
 include ("connection.php");
-$sql = "select * from bugs WHERE bugID = ".$_GET['id'];
-$idd = $_POST["id"];
-echo $idd;
-echo "POST";
+$sql = "select * from bugs WHERE bugID = ".$_GET["id"];
 
 $result = mysqli_query($db,$sql);
 
@@ -67,26 +64,12 @@ echo "<p>".$bugdesc."</p>";
 
 $currentUser = $_SESSION['username'];
 
-
-$sql4 = "select * from bugs WHERE bugID = ".$_GET['id'];
-
-$result4 = mysqli_query($db,$sql4);
-
-$row4 = mysqli_fetch_assoc($result4);
-
-$bugID2 = $row4['bugID'];
-
-
-echo $bugsID2;
-
-
-
 $query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$currentUser'") or die (mysqli_error($db));
 while ($rows = mysqli_fetch_array($query2)) {
     $xid = $rows['userID'];
 
 }
-/*
+
 //Select everything from our bugs table where ID is right
     $sql="select * from comments WHERE bugID=".$_GET["id"];
 //fetch our result from the database
@@ -106,22 +89,22 @@ if ($sql) {
     echo "Comments added successfully";
 }
 else
-    echo "Error in bug submission";
+    echo "Error in bug submission"
 ?>
 
 <?php
-*/
-if(isset($_POST["submit"])){//to run PHP script on submit
+
+if(isset($_POST['submit'])){//to run PHP script on submit
     //get variables for comment table
    // $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
+    $intid=intval($bugID);
     // echo $currentBugID;
     //echo $uid;
     // echo $comment;
-echo $idd;
 
-    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$bugID2','$xid','$comment', now())";
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$xid','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
@@ -134,7 +117,4 @@ echo $idd;
     // Close connection
     mysqli_close($db);
 }
-
-echo "the bug id is";
-echo $bugID;
 ?>
