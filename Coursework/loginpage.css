@@ -1,4 +1,6 @@
 .loginBox{
     border: 5px solid black;
-    margin-left: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 5%;
 }
