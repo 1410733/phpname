@@ -110,7 +110,7 @@ else
 
 <?php
 */
-if(isset($_POST['submit'])){//to run PHP script on submit
+if(isset($_POST["submit"])){//to run PHP script on submit
     //get variables for comment table
    // $bugID= $_GET["id"];
 
