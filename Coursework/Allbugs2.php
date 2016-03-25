@@ -85,6 +85,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
    // $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
+    $bugID=$_GET["id"];
 
     // echo $currentBugID;
     //echo $uid;
