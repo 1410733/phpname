@@ -19,7 +19,7 @@ session_start();
 
 
 include ("connection.php");
-$sql = "select * from bugs WHERE bugID = ".$_GET["id"];
+$sql = "select * from bugs WHERE bugID = ".$_GET['id'];
 
 $result = mysqli_query($db,$sql);
 
@@ -103,7 +103,8 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$xid','$comment', now())";
+
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$bugID','$xid','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
