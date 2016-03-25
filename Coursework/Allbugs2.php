@@ -9,7 +9,7 @@ session_start();
  * Date: 23/03/2016
  * Time: 03:52 PM
  */
-$userID = $_SESSION["userID"];
+$userID = $_SESSION['userID'];
 ?>
 
 
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO comments (bugID, descr, postDate) VALUES ('$intid','$comment', now())";
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$userID','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
