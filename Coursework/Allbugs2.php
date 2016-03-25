@@ -79,7 +79,7 @@ else
 
 if(isset($_POST['submit'])){//to run PHP script on submit
     //get variables for comment table
-    $bugID= $_GET['id'];
+    $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
 
