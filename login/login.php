@@ -1,9 +1,5 @@
-
 <?php
-session_start();
-?>
-<?php
-
+	session_start();
 	include("connection.php"); //Establishing connection with our database
 	
 	$error = ""; //Variable for storing our errors.
@@ -28,8 +24,7 @@ session_start();
 			//Check username and password from database
 			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
 			$result=mysqli_query($db,$sql);
-			$row=mysqli_fetch_array($result) ;
-			$userID = $row['userID'];//get user id
+			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
 
 			//If username and password exist in our database then create a session.
 			//Otherwise echo error.
@@ -37,10 +32,7 @@ session_start();
 			if(mysqli_num_rows($result) == 1)
 			{
 				$_SESSION['username'] = $username; // Initializing Session
-				$_SESSION["userID"] = $userID; // Initializing Session
 				header("location: home.php"); // Redirecting To Other Page
-				//get user ID
-
 			}else
 			{
 				$error = "Incorrect username or password.";
