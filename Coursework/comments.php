@@ -1,5 +1,6 @@
 <?php
 session_start();
+$useID=$_SESSION['userID'];
 ?>
 
 <?php
@@ -9,7 +10,7 @@ session_start();
  * Date: 23/03/2016
  * Time: 08:40
  */
-$uID=$_SESSION["userID"];
+//$uID=$_SESSION["userID"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +70,7 @@ $uID=$_SESSION["userID"];
 
 
                 }
-                echo $userID;
+                echo "$userID";
                 //echo '<a href="commen">';
                 ?>
 
