@@ -70,7 +70,7 @@ $currentBugID = $_GET["id"];
 
 $query3 = mysqli_query($db, "SELECT * FROM bugs WHERE bugID = '$currentBugID'") or die (mysqli_error($db));
 while ($rows2 = mysqli_fetch_array($query3)) {
-    $xbugid = $rows2['bugID'];
+    $xbugid = intval($rows2['bugID']);
 }
 
 //Select everything from our bugs table where ID is right
