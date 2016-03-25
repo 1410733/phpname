@@ -62,7 +62,7 @@ echo "<p>".$bugdesc."</p>";
 
 $currentUser = $_SESSION['username'];
 
-$query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$PresentUser'") or die (mysqli_error($db));
+$query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$currentUser'") or die (mysqli_error($db));
 while ($rows = mysqli_fetch_array($query2)) {
     $xid = $rows['userID'];
 }
@@ -98,9 +98,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
    // $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
-    $bugID=$_GET['id'];
     $intid=intval($bugID);
-    $intid2=intval($userID);
     // echo $currentBugID;
     //echo $uid;
     // echo $comment;
