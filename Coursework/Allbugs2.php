@@ -41,10 +41,10 @@ echo "<p>".$bugdesc."</p>";
         <br>
         <br>
         <label for="comments">Comment:</label>
-        <textarea name="comments" cols="45" rows="5"></textarea>
+        <textarea name="comment" cols="45" rows="5"></textarea>
         <br>
         <br>
-        <input type="submit" value="Submit" />
+        <input type="submit" name="submit" value="Submit" />
     </fieldset>
 </form>
 </body>
@@ -70,3 +70,29 @@ else
     echo "Error in bug submission"
 ?>
 
+<?php
+
+if(isset($_POST['submit'])){//to run PHP script on submit
+    //get variables for comment table
+    $currentBugID = $_GET['id'];
+
+    $comment= $_POST['comment'];
+
+    // echo $currentBugID;
+    //echo $uid;
+    // echo $comment;
+
+    $qry="INSERT  INTO bjtscomments(bugID, uid, bjtscomment) VALUES ('$currentBugID', '$uid','$comment')";
+
+    if(mysqli_query($db, $qry)){
+        echo "Records added successfully.";
+
+        //redirect user to login screen
+        //header("location: index.php");
+    } else{
+        echo "ERROR: Could not be able to execute";//.$qry. mysqli_error($db);
+    }
+    // Close connection
+    mysqli_close($db);
+}
+?>
