@@ -27,7 +27,8 @@ $row = mysqli_fetch_assoc($result);
 
 $bugtitle = $row['title'];
 $bugID = $row['bugID'];
-echo "the bug id is" $bugID;
+echo "the bug id is";
+echo $bugID;
 $bugdesc = $row['descr'];
 
 echo "<h2>".$bugtitle."</h2>";
