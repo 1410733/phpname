@@ -20,6 +20,7 @@ $username= $_SESSION['username'] ;
 <br>
 <a href="Bugform.php">Report a Bug</a>
 <a href="Allbugs.php">Submitted Bugs</a>
+<a href="comments.php">Signout</a>
 <a href="logout.php">Signout</a>
 
 
