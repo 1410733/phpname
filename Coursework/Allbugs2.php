@@ -67,12 +67,7 @@ $currentUser = $_SESSION['username'];
 $query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$currentUser'") or die (mysqli_error($db));
 while ($rows = mysqli_fetch_array($query2)) {
     $xid = $rows['userID'];
-}
-$currentBugID = $_GET["id"];
 
-$query3 = mysqli_query($db, "SELECT * FROM bugs WHERE bugID = '$currentBugID'") or die (mysqli_error($db));
-while ($rows2 = mysqli_fetch_array($query3)) {
-    $xbugid = intval($rows2['bugID']);
 }
 
 //Select everything from our bugs table where ID is right
@@ -109,7 +104,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$xbugid','$xid','$comment', now())";
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$bugID','$xid','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
