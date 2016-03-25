@@ -64,6 +64,20 @@ echo "<p>".$bugdesc."</p>";
 
 $currentUser = $_SESSION['username'];
 
+
+$sql4 = "select * from bugs WHERE bugID = ".$_GET['id'];
+
+$result4 = mysqli_query($db,$sql4);
+
+$row4 = mysqli_fetch_assoc($result4);
+
+$bugID2 = $row4['bugID'];
+
+
+
+
+
+
 $query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$currentUser'") or die (mysqli_error($db));
 while ($rows = mysqli_fetch_array($query2)) {
     $xid = $rows['userID'];
@@ -104,7 +118,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     // echo $comment;
 
 
-    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$bugID','$xid','$comment', now())";
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$bugID2','$xid','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
