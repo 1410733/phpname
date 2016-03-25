@@ -69,7 +69,7 @@ while ($rows = mysqli_fetch_array($query2)) {
     $xid = $rows['userID'];
 
 }
-
+/*
 //Select everything from our bugs table where ID is right
     $sql="select * from comments WHERE bugID=".$_GET["id"];
 //fetch our result from the database
@@ -89,11 +89,11 @@ if ($sql) {
     echo "Comments added successfully";
 }
 else
-    echo "Error in bug submission"
+    echo "Error in bug submission";
 ?>
 
 <?php
-
+*/
 if(isset($_POST['submit'])){//to run PHP script on submit
     //get variables for comment table
    // $bugID= $_GET["id"];
