@@ -25,14 +25,19 @@
 			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
 			$result=mysqli_query($db,$sql);
 			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
-			
+			$userID = $row['userID'];//get user id
+
 			//If username and password exist in our database then create a session.
 			//Otherwise echo error.
 			
 			if(mysqli_num_rows($result) == 1)
 			{
 				$_SESSION['username'] = $username; // Initializing Session
+				$_SESSION['userID'] = $username; // Initializing Session
 				header("location: home.php"); // Redirecting To Other Page
+				//get user ID
+				$_SESSION["userID"] = $userID;//user id assigned to session global variable
+
 			}else
 			{
 				$error = "Incorrect username or password.";
