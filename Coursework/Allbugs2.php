@@ -66,7 +66,7 @@ $query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$currentUser'
 while ($rows = mysqli_fetch_array($query2)) {
     $xid = $rows['userID'];
 }
-$currentBugID = $_GET["id"];
+$currentBugID = $_GET['id'];
 
 $query3 = mysqli_query($db, "SELECT * FROM bugs WHERE bugID = '$currentBugID'") or die (mysqli_error($db));
 while ($rows2 = mysqli_fetch_array($query3)) {
