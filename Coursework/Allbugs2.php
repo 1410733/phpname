@@ -118,7 +118,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     // echo $currentBugID;
     //echo $uid;
     // echo $comment;
-
+echo $idd;
 
     $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$bugID2','$xid','$comment', now())";
 
