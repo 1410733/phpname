@@ -17,6 +17,9 @@ $userID = $_SESSION['userID'];
 
 include ("connection.php");
 $sql = "select * from bugs WHERE bugID = ".$_GET["id"];
+$sql2= "Select * from users userID = $userID";
+$result2=mysqli_fetch_array($db, $sql2);
+$row2=mysqli_fetch_assoc($result2);
 
 $result = mysqli_query($db,$sql);
 
@@ -25,6 +28,7 @@ $row = mysqli_fetch_assoc($result);
 $bugtitle = $row['title'];
 $bugID = $row['bugID'];
 $bugdesc = $row['descr'];
+$usrID=$row2['userID'];
 
 echo "<h2>".$bugtitle."</h2>";
 echo "<p>".$bugdesc."</p>";
@@ -92,7 +96,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$intid2','$comment', now())";
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$usrID','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
