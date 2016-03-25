@@ -74,7 +74,7 @@ $row4 = mysqli_fetch_assoc($result4);
 $bugID2 = $row4['bugID'];
 
 
-
+echo $bugsID2;
 
 
 
