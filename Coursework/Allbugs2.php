@@ -9,7 +9,7 @@ session_start();
  * Date: 23/03/2016
  * Time: 03:52 PM
  */
-$userid = $_SESSION["userID"];
+$userID = $_SESSION["userID"];
 ?>
 
 
@@ -87,7 +87,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     $comment= $_POST['comment'];
     $bugID=$_GET["id"];
     $intid=intval($bugID);
-    $intid2=intval($userid);
+    $intid2=intval($userID);
     // echo $currentBugID;
     //echo $uid;
     // echo $comment;
