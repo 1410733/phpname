@@ -20,6 +20,8 @@ session_start();
 
 include ("connection.php");
 $sql = "select * from bugs WHERE bugID = ".$_GET['id'];
+$idd = $_GET['id'];
+echo $idd;
 
 $result = mysqli_query($db,$sql);
 
