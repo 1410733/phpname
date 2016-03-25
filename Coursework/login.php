@@ -25,7 +25,9 @@ if (empty ($_POST["username"]) || empty ($_POST["password"]))
 
     $sql="SELECT * FROM users WHERE username='$username' and password='$password'";
     $result = mysqli_query($db,$sql);
-    $results = mysqli_fetch_array($result);
+    $row = mysqli_fetch_array($result);
+    $userID = $row['userID'];//get user id
+    $_SESSION=$userID;
     echo $results['password'];
 
 if (mysqli_num_rows($result) == 1 ) {
@@ -34,7 +36,7 @@ if (mysqli_num_rows($result) == 1 ) {
 
     //get the user id as a session variable
 
-    $userid = $_SESSION["userID"];
+    //$userid = $_SESSION["userID"];
 
 } else {
     echo "Incorrect username or password."; }
