@@ -9,7 +9,7 @@ session_start();
  * Date: 23/03/2016
  * Time: 08:40
  */
-$userID=$_SESSION['userID'];
+$uID=$_SESSION["userID"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
