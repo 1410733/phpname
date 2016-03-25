@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 /**
  * Created by PhpStorm.
  * User: Lesson
@@ -6,7 +10,7 @@
  * Time: 03:52 PM
  */
 ?>
-
+ $userid = $_SESSION["userID"];
 
 <?php
 
@@ -74,7 +78,7 @@ else
 
 if(isset($_POST['submit'])){//to run PHP script on submit
     //get variables for comment table
-    $currentBugID = $_GET['id'];
+    $bugID= $_GET['id'];
 
     $comment= $_POST['comment'];
 
@@ -82,7 +86,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO bjtscomments(bugID, uid, bjtscomment) VALUES ('$currentBugID', '$uid','$comment')";
+    $qry="INSERT  INTO comments (bugID, userID, decr) VALUES ('$bugID', '$userid','$comment')";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";

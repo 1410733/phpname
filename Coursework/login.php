@@ -35,7 +35,6 @@ if (mysqli_num_rows($result) == 1 ) {
     //get the user id as a session variable
 
     $userid = $_SESSION["userID"];
-    echo $userid;
 
 } else {
     echo "Incorrect username or password."; }
