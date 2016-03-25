@@ -20,7 +20,7 @@ session_start();
 
 include ("connection.php");
 $sql = "select * from bugs WHERE bugID = ".$_GET['id'];
-$idd = $_POST['id'];
+$idd = $_POST["id"];
 echo $idd;
 echo "POST";
 
