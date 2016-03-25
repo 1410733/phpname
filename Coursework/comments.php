@@ -69,6 +69,7 @@ $userID=$_SESSION["userID"];
 
 
                 }
+                echo $userID;
                 //echo '<a href="commen">';
                 ?>
 
