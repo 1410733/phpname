@@ -9,8 +9,9 @@ session_start();
  * Date: 23/03/2016
  * Time: 03:52 PM
  */
+$userid = $_SESSION["userID"];
 ?>
- $userid = $_SESSION["userID"];
+
 
 <?php
 
