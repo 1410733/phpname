@@ -87,7 +87,7 @@ if(isset($_POST['submit'])){//to run PHP script on submit
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO comments (bugID, userID, decr) VALUES ('$bugID', '$userid','$comment')";
+    $qry="INSERT  INTO comments (bugID, userID, descr) VALUES ('$bugID', '$userid','$comment')";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
