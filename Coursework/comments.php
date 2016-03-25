@@ -88,7 +88,7 @@ $userid=$_SESSION["userid"];
                     //echo $uid;
                     // echo $comment;
 
-                    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$currentBugID', '$userid','$comment', now())";
+                    $qry="INSERT  INTO comments (bugID, userID, bugdesc, postDate) VALUES ('$currentBugID', '$userid','$comment', now())";
 
                     if(mysqli_query($db, $qry)){
                         echo "Records added successfully.";
