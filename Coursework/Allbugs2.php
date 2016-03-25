@@ -9,11 +9,14 @@ session_start();
  * Date: 23/03/2016
  * Time: 03:52 PM
  */
-$userID = $_SESSION['userID'];
+//$userID = $_SESSION['userID'];
+
 ?>
 
 
 <?php
+
+
 
 include ("connection.php");
 $sql = "select * from bugs WHERE bugID = ".$_GET["id"];
@@ -56,6 +59,16 @@ echo "<p>".$bugdesc."</p>";
 </html>
 
 <?php
+
+$currentUser = $_SESSION['username'];
+
+$query2 = mysqli_query($db, "SELECT * FROM users WHERE username = '$PresentUser'") or die (mysqli_error($db));
+while ($rows = mysqli_fetch_array($query2)) {
+    $xid = $rows['userID'];
+}
+
+
+
 //Select everything from our bugs table where ID is right
     $sql="select * from comments WHERE bugID=".$_GET["id"];
 //fetch our result from the database
@@ -85,14 +98,14 @@ if(isset($_POST['submit'])){//to run PHP script on submit
    // $bugID= $_GET["id"];
 
     $comment= $_POST['comment'];
-    $bugID=$_GET["id"];
+    $bugID=$_GET['id'];
     $intid=intval($bugID);
     $intid2=intval($userID);
     // echo $currentBugID;
     //echo $uid;
     // echo $comment;
 
-    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$intid2','$comment', now())";
+    $qry="INSERT  INTO comments (bugID, userID, descr, postDate) VALUES ('$intid','$xid','$comment', now())";
 
     if(mysqli_query($db, $qry)){
         echo "Records added successfully.";
