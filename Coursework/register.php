@@ -13,7 +13,8 @@
 </head>
 
 <body>
-	<form method="post" action="submit.php" id = "formcss">
+<div id = "form1">
+	<form method="post" action="submit.php">
 		<fieldset>
 		<legend>Registration Form</legend>
 			<table width="400" border="0" cellpadding="10" cellspacing="10">
@@ -73,5 +74,6 @@
 			</table>
 		</fieldset>
 	</form>
+	</div>
 </body>
 </html>
