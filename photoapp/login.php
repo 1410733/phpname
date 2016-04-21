@@ -5,7 +5,7 @@
 	$error = ""; //Variable for storing our errors.
 	if(isset($_POST["submit"]))
 	{
-		if(empty($_GET["username"]) || empty($_GET["password"]))
+		if(empty($_POST["username"]) || empty($_POST["password"]))
 		{
 			$error = "Both fields are required.";
 		}else
