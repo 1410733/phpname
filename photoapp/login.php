@@ -3,16 +3,16 @@
 	include("connection.php"); //Establishing connection with our database
 	
 	$error = ""; //Variable for storing our errors.
-	if(isset($_SESSION["submit"]))
+	if(isset($_GET["submit"]))
 	{
-		if(empty($_POST["username"]) || empty($_POST["password"]))
+		if(empty($_GET["username"]) || empty($_GET["password"]))
 		{
 			$error = "Both fields are required.";
 		}else
 		{
 			// Define $username and $password
-			$username=$_POST['username'];
-			$password=$_POST['password'];
+			$username=$_GET['username'];
+			$password=$_GET['password'];
 			$password = mysqli_real_escape_string($db, $password);
 			$username = mysqli_real_escape_string($db, $username);
 			//$password = md5($password);
