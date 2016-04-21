@@ -13,8 +13,8 @@
 			// Define $username and $password
 			$username=$_POST['username'];
 			$password=$_POST['password'];
-			//$password = mysqli_real_escape_string($db, $password);
-			$password = md5($password);
+			$password = mysqli_real_escape_string($db, $password);
+			/$password = md5($password);
 
 
 			
