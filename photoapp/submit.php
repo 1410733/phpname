@@ -1,10 +1,10 @@
 <?php
 $msg = "";
 if(isset($_POST["submit"]))
-{
-    $name = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+
+    $name = $_GET["username"];
+    $email = $_GET["email"];
+    $password = $_GET["password"];
 
 
 
@@ -18,7 +18,7 @@ if(isset($_POST["submit"]))
     else
     {
         //echo $name." ".$email." ".$password;
-        $query = mysqli_query($db, "INSERT INTO users (username, email, password) VALUES ('$name', '$email', '$password')")or die(mysqli_error($db));
+        $query = mysqli_query($db, "INSERT INTO users (username, email, password) VALUES ('$name', '$email', '$password')")or die('<pre> ERROR!!</pre>');
         if($query)
         {
             $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
