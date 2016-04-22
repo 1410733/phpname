@@ -20,7 +20,7 @@
 
 			
 			//Check username and password from database
-			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
+			$sql="SELECT userID FROM users WHERE username='$username' and password='$password' LIMIT 1;";
 			$result=mysqli_query($db,$sql) or die ('<pre> . Error!! . </pre> ');
 			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
 			
