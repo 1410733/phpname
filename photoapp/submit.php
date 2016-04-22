@@ -2,9 +2,9 @@
 $msg = "";
 if(isset($_POST["submit"]))
 
-    $name = $_GET["username"];
-    $email = $_GET["email"];
-    $password = $_GET["password"];
+    $name = $_POST["username"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
 
 
