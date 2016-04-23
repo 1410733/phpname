@@ -15,7 +15,7 @@
 			$password=$_POST['password'];
 			$password = mysqli_real_escape_string($db, $password);
 			$username = mysqli_real_escape_string($db, $username);
-			$password = md5($password);
+			//$password = md5($password);
 
 
 			
