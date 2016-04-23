@@ -1,42 +1,53 @@
+
 <?php
-	session_start();
-	include("connection.php"); //Establishing connection with our database
-	
-	$error = ""; //Variable for storing our errors.
-	if(isset($_POST["submit"]))
+session_start();
+?>
+<?php
+include("connection.php"); //Establishing connection with our database
+$mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+if(!$mysqli) die('Could not connect$: ' . mysqli_error());
+
+$error = ""; //Variable for storing our errors.
+if(isset($_POST["submit"]))
+{
+	if(empty($_POST["username"]) || empty($_POST["password"]))
 	{
-		if(empty($_POST["username"]) || empty($_POST["password"]))
-		{
-			$error = "Both fields are required.";
-		}else
-		{
-			// Define $username and $password
-			$username=$_POST['username'];
-			$password=$_POST['password'];
-			$password = mysqli_real_escape_string($db, $password);
-			$username = mysqli_real_escape_string($db, $username);
-			$password = md5($password);
-
-
-			
-			//Check username and password from database
-			$sql="SELECT userID FROM users WHERE username='$username' and password='$password' LIMIT 1;";
-			$result=mysqli_query($db,$sql) or die ('<pre> . Error!! . </pre> ');
-			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
-			
-			//If username and password exist in our database then create a session.
-			//Otherwise echo error.
-			
-			if(mysqli_num_rows($result) == 1)
-			{
-				$_SESSION['username'] = $username; // Initializing Session
-				header("location: photos.php"); // Redirecting To Other Page
-			}else
-			{
-				$error = "Incorrect username or password.";
-			}
-
-		}
+		$error = "Both fields are required.";
 	}
+
+	else
+	{
+		// Define $username and $password
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+
+		// Prepare IN parameters
+		//$mysqli->query("SET @username  = " . "'" . $mysqli->real_escape_string($username) . "'");
+		//$mysqli->query("SET @password   = " . "'" . $mysqli->real_escape_string(password) . "'");
+		$mysqli->query("SET @userID = 0");
+
+
+		//Check username and password from database
+		//$sql="SELECT userID FROM userssecure WHERE username='$username' and password='$password'";
+
+		//call procedure
+		//$sql="CALL getAll($username,$password)";
+		$result = $mysqli->query("CALL Login_Procedure ($username,$password,@userID)");
+		$result = $mysqli->query( 'SELECT @userID' );
+		//if(!$result) die("CALL failed: (" . $mysqli->errno . ") " . $mysqli->error);
+		if($result->num_rows ==1){
+			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
+			$userid=$row['userID'];//Get user ID
+			$_SESSION['username'] = $username; // Initializing Session
+			//$_SESSION["userid"] = $userid;//user id assigned to session global variable
+			header("location: photos.php"); // Redirecting To Other Page
+		}
+		else
+		{
+			$error = "Incorrect username or password.";
+		}
+
+	}
+}
 
 ?>
