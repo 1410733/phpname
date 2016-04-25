@@ -46,7 +46,7 @@ if(isset($_POST["submit"]))
         if ( !$mysqli->query("CALL Userreg('$email','$name','$password')"))  {
             echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
         }
-
+        echo "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
         //if(!$result) die("CALL failed: (" . $mysqli->errno . ") " . $mysqli->error);
         //echo $name." ".$email." ".$password;
         // $query = mysqli_query($db, "INSERT INTO usersSecure (username, email, password) VALUES ('$name', '$email', '$password')")or die(mysqli_error($db));
