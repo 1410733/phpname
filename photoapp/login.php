@@ -31,7 +31,6 @@ if(isset($_POST["submit"]))
 		//$sql="SELECT userID FROM userssecure WHERE username='$username' and password='$password'";
 
 		//call procedure
-		//$sql="CALL getAll($username,$password)";
 		$result = $mysqli->query("CALL Login_Procedure ($username,$password,@userID)");
 		$result = $mysqli->query( 'SELECT @userID' );
 		//if(!$result) die("CALL failed: (" . $mysqli->errno . ") " . $mysqli->error);
@@ -39,7 +38,6 @@ if(isset($_POST["submit"]))
 			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
 			$userid=$row['userID'];//Get user ID
 			$_SESSION['username'] = $username; // Initializing Session
-			//$_SESSION["userid"] = $userid;//user id assigned to session global variable
 			header("location: photos.php"); // Redirecting To Other Page
 		}
 		else
