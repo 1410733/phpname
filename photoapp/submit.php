@@ -43,16 +43,18 @@ if(isset($_POST["submit"]))
         }
 
         //call procedure
-        if ( !$mysqli->query("CALL Userreg('$email','$name','$password')"))  {
-            echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        if ( $mysqli->query("CALL Userreg('$email','$name','$password')"))  {
+            //echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
+            $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
         }
-        echo "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
+       // echo "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
         //if(!$result) die("CALL failed: (" . $mysqli->errno . ") " . $mysqli->error);
         //echo $name." ".$email." ".$password;
         // $query = mysqli_query($db, "INSERT INTO usersSecure (username, email, password) VALUES ('$name', '$email', '$password')")or die(mysqli_error($db));
+
         if($result)
         {
-            $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
+          //  $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
         }
 
     }
