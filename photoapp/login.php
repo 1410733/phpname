@@ -54,7 +54,7 @@ if(isset($_POST["submit"]))
 
 		//create procedure
 
-		if (!$mysqli->query("DROP PROCEDURE IF EXISTS getUserID") ||
+		if (!$mysqli->query("DROP PROCEDURE IF EXISTS Login_Procedure") ||
 			!$mysqli->query('CREATE PROCEDURE Login_Procedure(IN newusername varchar(255),
     IN newpassword varchar(255), OUT newuserID int)
    BEGIN
@@ -71,7 +71,7 @@ if(isset($_POST["submit"]))
 		// Prepare OUT parameters
 		$mysqli->query("SET @userID=0");
 
-		if (!$mysqli->query("CALL getUserID('$username','$password',@userID)")) {
+		if (!$mysqli->query("CALL Login_Procedure('$username','$password',@userID)")) {
 			//echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
 		}
 
