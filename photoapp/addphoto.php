@@ -40,7 +40,7 @@ if(isset($_POST["submit"]))
                 }
 
                 //call procedure
-                if (!$mysqli->query("CALL sp_insertphotos('$title','$desc','$target_file','$userID')")) {
+                if (!$mysqli->query("CALL Fuploadprotection('$title','$desc','$target_file','$userID')")) {
 
                 } else {
 
