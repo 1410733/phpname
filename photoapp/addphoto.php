@@ -72,7 +72,7 @@ if(isset($_POST["submit"]))
 
                 //call procedure
                 if (!$mysqli->query("CALL Fuploadprotection('$title','$desc','$target_file','$userID')")) {
-
+                    echo "call failed";
                 } else {
 
                     $msg = "Thank You! The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded. click <a href='photos.php'>here</a> to go back";
