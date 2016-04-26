@@ -9,7 +9,7 @@ if(isset($_SESSION['username']))
     $row=mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result) == 1)
     {
-        $searchID = $row['userID'];
+        $searchID = trim($row['userID']);
         $searchSql="SELECT title, photoID,url FROM photos WHERE userID='$searchID'";
         $searchresult=mysqli_query($db,$searchSql);
 

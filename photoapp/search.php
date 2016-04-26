@@ -2,14 +2,14 @@
 $resultText = "";
 if(isset($_POST["submit"]))
 {
-    $name = $_POST["username"];
+    $name = trim($_POST["username"]);
 
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result) == 1)
     {
-        $searchID = $row['userID'];
+        $searchID = trim($row['userID']);
         $searchSql="SELECT title, photoID FROM photos WHERE userID='$searchID'";
         $searchresult=mysqli_query($db,$searchSql);
 

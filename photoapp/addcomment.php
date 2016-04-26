@@ -6,8 +6,8 @@ $msg = ""; //Variable for storing our errors.
 if(isset($_POST["submit"]))
 {
 
-    $desc = $_POST["desc"];
-    $photoID = $_POST["photoID"];
+    $desc = trim($_POST["desc"]);
+    $photoID = trim($_POST["photoID"]);
     $name = $_SESSION["username"];
 
     $sql="SELECT userID FROM users WHERE username='$name'";

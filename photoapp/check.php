@@ -7,7 +7,7 @@ $ses_sql = mysqli_query($db,"SELECT username, admin FROM users WHERE username='$
 
 $row=mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-$login_user=$row['username'];
+$login_user=trim($row['username']);
 if($row['admin']==1){
     $adminuser = true;
 }
