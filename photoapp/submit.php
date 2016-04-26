@@ -14,13 +14,14 @@ if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 
 if(isset($_POST["submit"]))
 {
-    $name = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $name = trim($_POST["username"]);
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
 
 //clean user input
     $name=mysqli_real_escape_string($db,$name);
     $email=mysqli_real_escape_string($db,$email);
+    $password=mysqli_real_escape_string($db,$password);
 
     //encrypt password
     $password=md5($password);

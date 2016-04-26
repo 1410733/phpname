@@ -22,8 +22,8 @@ if(isset($_POST["submit"]))
 		$error = "Both fields are required.";
 	}else {
 		// Define $username and $password
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$username = trim($_POST['username']);
+		$password = trim($_POST['password']);
 
 		//clean user input
 		$username=mysqli_real_escape_string($db,$username);
