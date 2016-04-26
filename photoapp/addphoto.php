@@ -25,7 +25,7 @@ if(isset($_POST["submit"]))
 
         //restrict file type and size
         if( ( strtolower( $uploaded_ext ) == "jpg" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
-            ( $uploaded_size < 100000 ) &&
+            ( $uploaded_size < 10000000 ) &&
             getimagesize( $uploaded_tmp ) ) {
 
             // Can we move the file to the upload folder?
