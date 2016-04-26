@@ -12,7 +12,8 @@ $userID=$_SESSION["userid"];
 include("connection.php"); //Establishing connection with our database
 
 //connect to db
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+//$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+$mysqli = new mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 //if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 
 $msg = ""; //Variable for storing our errors.
