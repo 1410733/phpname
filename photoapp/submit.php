@@ -48,7 +48,9 @@ if(isset($_POST["submit"]))
             //echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
             $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
         }
-
+            function xecho ($msg) {
+                echo xssafe($msg);
+            }
         if($result)
         {
           //  $msg = "Thank You! you are now registered. click <a href='index.php'>here</a> to login";
