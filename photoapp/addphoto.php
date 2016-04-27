@@ -25,6 +25,22 @@ if(isset($_POST["submit"]))
         $uploadOk = 0;
     }
 
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exist.";
+        $uploadOk=0;
+    }
+
+    if ($_FILES["fileToUpload"]["size"] > 400000) {
+        echo "Sorry, your picture is too large.";
+        $uploadOk = 0;
+    }
+
+    if ($imageFileType != "jpg" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif")
+    {
+        echo "Sorry, Only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
