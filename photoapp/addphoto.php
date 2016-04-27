@@ -25,7 +25,6 @@ if(isset($_POST["submit"]))
         $uploadOk = 0;
     }
 
-
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
