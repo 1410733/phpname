@@ -14,6 +14,17 @@ if(isset($_POST["submit"]))
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     $uploadOk = 1;
+    $fileinfo= new finfo(FILEINFO_MIME_TYPE);
+
+    $check= getimagesize($_FILEs ["fileToUpload"]["tmp_name"]);
+    if($check !==false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
 
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
