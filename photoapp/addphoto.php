@@ -21,14 +21,15 @@ if(isset($_POST["submit"]))
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        $uploadOk = 0;
         echo "File is not an image.";
+        $uploadOk = 0;
+        header("location: addphoto.php"); // Redirecting To Other Page
 
     }
 
     if (file_exists($target_file)) {
-        $uploadOk=0;
         echo "Sorry, file already exist.";
+        $uploadOk=0;
 
     }
 
