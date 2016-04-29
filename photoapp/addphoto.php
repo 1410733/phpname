@@ -23,7 +23,7 @@ if(isset($_POST["submit"]))
     } else {
         echo "File is not an image.";
         $uploadOk = 0;
-        header("location: addphoto.php"); // Redirecting To Other Page
+        header("location: addphotoform.php"); // Redirecting To Other Page
 
     }
 
