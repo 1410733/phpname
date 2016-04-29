@@ -39,33 +39,34 @@ if(isset($_POST["submit"]))
     {
         echo "Sorry, Only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
-    }
+    } else {
 
 
-    $sql="SELECT userID FROM users WHERE username='$name'";
-    $result=mysqli_query($db,$sql);
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $sql = "SELECT userID FROM users WHERE username='$name'";
+        $result = mysqli_query($db, $sql);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    if(mysqli_num_rows($result) == 1) {
+        if (mysqli_num_rows($result) == 1) {
 
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $id = $row['userID'];
-            $addsql = "INSERT INTO photos (title, description, postDate, url, userID) VALUES ('$title','$desc',now(),'$target_file','$id')";
-            $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
-            if ($query) {
-                $msg = "Thank You! The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded. click <a href='photos.php'>here</a> to go back";
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                $id = $row['userID'];
+                $addsql = "INSERT INTO photos (title, description, postDate, url, userID) VALUES ('$title','$desc',now(),'$target_file','$id')";
+                $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
+                if ($query) {
+                    $msg = "Thank You! The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded. click <a href='photos.php'>here</a> to go back";
+                }
+
+            } else {
+                $msg = "Sorry, there was an error uploading your file.";
             }
+            //echo $name." ".$email." ".$password;
+
 
         } else {
-            $msg = "Sorry, there was an error uploading your file.";
+            $msg = "You need to login first";
         }
-        //echo $name." ".$email." ".$password;
-
+    }
 
     }
-    else{
-        $msg = "You need to login first";
-    }
-}
 
 ?>
