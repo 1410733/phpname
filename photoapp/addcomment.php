@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_regenerate_id();
 include("connection.php"); //Establishing connection with our database
 
 $msg = ""; //Variable for storing our errors.
