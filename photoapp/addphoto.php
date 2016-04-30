@@ -37,7 +37,7 @@ if(isset($_POST["submit"]))
         $uploadOk = 0;
     }
 
-    if ($imageFileType != "jpg" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif")
+    if ($imageFileType != "JPG" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif")
     {
         echo "Sorry, Only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
