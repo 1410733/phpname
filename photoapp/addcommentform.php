@@ -21,7 +21,7 @@ include("addcomment.php");
         <label>Comment:</label><br>
         <textarea name="desc" cols="40" rows="5"  ></textarea><br><br>
         <label>Photo:</label>
-        <input type="text" name="photoID" value="<?php echo $_GET['id'] ?>" /><br><br>
+        <input type="text" name="photoID" value="<?php echo $_GET['id'] ?>" readonly/><br><br>
         <input type="submit" name="submit" value="Submit Comment" />
     </form>
     <div class="msg"><?php echo $msg;?></div>

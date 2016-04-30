@@ -16,4 +16,24 @@ if(!isset($user_check))
 {
 header("Location: index.php");
 }
+//session time out
+if (isset($_SESSION['timeout']))
+{ $logintime = $_SESSION['timeout'];
+    $differenceintime = time() - $logintime;
+
+    if ($differenceintime >= 5)
+    { //session expiration
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+    }
+    else {//session timeout
+        //session_destroy();
+        //header("Location: index.php");
+        $_SESSION['timeout'] = time(); }
+}
+else {
+    $_SESSION['timeout'] = time();
+
+}
 ?>
