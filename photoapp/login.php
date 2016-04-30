@@ -10,8 +10,6 @@ function xss_cleaner($input_str) {
 	$return_str = str_ireplace( '%3Cscript', '', $return_str );
 	return $return_str;
 }
-//session IP binding
-//$IP=getenv("REOMOTE_ADDR");
 
 
 $error = ""; //Variable for storing our errors.
@@ -25,14 +23,14 @@ if(isset($_POST["submit"]))
 		$username = trim($_POST['username']);
 		$password = trim($_POST['password']);
 
-		//clean user input
+		//clean user supplied input
 		$username=mysqli_real_escape_string($db,$username);
 		$password=md5($password);
 
 		//clean user input from cross site scripting
 		xss_cleaner($username );
 
-		//instance of connection to dbase
+		//instance connection to te DB
 		$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 		//if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 

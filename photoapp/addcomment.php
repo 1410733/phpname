@@ -9,11 +9,15 @@ if(isset($_POST["submit"]))
     $desc = trim($_POST["desc"]);
     $photoID =trim($_POST["photoID"]);
     $name = $_SESSION["username"];
+
+    //Sanitize description
     $desc = stripslashes($desc);
     $desc = mysqli_real_escape_string($desc);
     $desc = htmlspecialchars($desc);
+
+    //sanitize photoID
     $photoID = stripslashes($photoID);
-    $photoID =stripslashes($photoID);
+    $photoID =htmlspecialchars($photoID);
 
 
     $sql="SELECT userID FROM users WHERE username='$name'";

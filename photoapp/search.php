@@ -1,4 +1,5 @@
 <?php
+
 $resultText = "";
 if(isset($_POST["submit"]))
 {
