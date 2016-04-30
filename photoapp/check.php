@@ -21,7 +21,7 @@ if (isset($_SESSION['timeout']))
 { $logintime = $_SESSION['timeout'];
     $differenceintime = time() - $logintime;
 
-    if ($differenceintime >= 5)
+    if ($differenceintime >= 10)
     { //session expiration
         session_unset();
         session_destroy();
