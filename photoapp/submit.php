@@ -30,7 +30,7 @@ if(isset($_POST["submit"]))
     $name=xss_cleaner($name);
     $email=xss_cleaner($email);
 
-    $sql="SELECT email FROM userssecure WHERE email='$email'";
+    $sql="SELECT email FROM users WHERE email='$email'";
     $result=mysqli_query($db,$sql);
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
     if(mysqli_num_rows($result) == 1)
