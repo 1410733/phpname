@@ -35,7 +35,7 @@ if(isset($_POST["submit"]))
     $photoID = xss_sanitizer($photoID);
 
     $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-    if(!$mysqli) die( '<pre>Something went wrong.</pre>' );
+    if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 
 
     if($userID >0) {
@@ -46,7 +46,7 @@ if(isset($_POST["submit"]))
 
         //Prepare statement for binding.
         if ( !( $stmt=$mysqli->prepare("INSERT INTO comments (description, photoID, userID) VALUES (?, ?, ?)")))  {
-            echo "CALL failed: Something went wrong" ;
+            echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
         }
 
 
