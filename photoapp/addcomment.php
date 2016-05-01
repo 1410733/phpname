@@ -3,6 +3,10 @@ session_start();
 session_regenerate_id();
 include("connection.php"); //Establishing connection with our database
 
+$mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+if(!$mysqli) die('Could not connect$: ' . mysqli_error());
+
+
 $userID=$_SESSION["userid"] ;
 
 $msg = ""; //Variable for storing our errors.
@@ -21,6 +25,10 @@ if(isset($_POST["submit"]))
     //sanitize photoID
     $photoID = stripslashes($photoID);
     $photoID =htmlspecialchars($photoID);
+
+    $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+    if(!$mysqli) die('Could not connect$: ' . mysqli_error());
+
 
     if($userID >0) {
         //test connection
