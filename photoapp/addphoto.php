@@ -34,14 +34,14 @@ if(isset($_POST["submit"]))
 
     }
 
-    if ($_FILES["fileToUpload"]["size"] > 400000) {
-        echo "Sorry, your picture is too large.";
-        $uploadOk = 0;
-    }
+   // if ($_FILES["fileToUpload"]["size"] > 400000) {
+      //  echo "Sorry, your picture is too large.";
+     //   $uploadOk = 0;
+   // }
 
-    if ($imageFileType != "JPG" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif")
+    if ($imageFileType != "JPG" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif" && ($_FILES["fileToUpload"]["size"] > 400000))
     {
-        echo "Sorry, Only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "Sorry, Only JPG, JPEG, PNG & GIF files are allowed or the file size is too large.";
         $uploadOk = 0;
     } else {
 
