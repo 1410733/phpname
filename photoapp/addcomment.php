@@ -1,47 +1,50 @@
 <?php
 session_start();
-session_regenerate_id();
-include("connection.php"); //Establishing connection with our database
+/*display error
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); */
 
+//Establishing connection with our database
+include("connection.php");
 $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 
-function xss_sanitizer($input_str) {
-    $return_str = str_replace( array('<','>',"'",'"',')','('), array('&lt;','&gt;','&apos;','&#x22;','&#x29;','&#x28;'), $input_str );
-    $return_str = str_ireplace( '%3Cscript', '', $return_str );
-    return $return_str;
-}
+//get the session variables
 
-
-$userID=$_SESSION["userid"] ;
-
+$name = $_SESSION["username"];
+$userID=$_SESSION["userid"];
+//echo $userID;
+?>
+<?php
 $msg = ""; //Variable for storing our errors.
+
 if(isset($_POST["submit"]))
 {
 
-    $desc = trim($_POST["desc"]);
-    $photoID =trim($_POST["photoID"]);
+    //Define & Sanitize description.
+    $desc = $_POST["desc"];
+    $desc = stripslashes( $desc );
+    $desc=mysqli_real_escape_string($db,$desc);
+    $desc = htmlspecialchars( $desc );
+
+    //Define & Sanitize username.
     $name = $_SESSION["username"];
+    $name = stripslashes( $name );
+    $name=mysqli_real_escape_string($db,$name);
+    $name = htmlspecialchars($name);
 
-    //Sanitize description
-    $desc = stripslashes($desc);
-    $desc = mysqli_real_escape_string($desc);
-    $desc = htmlspecialchars($desc);
-    $desc = xss_sanitizer($desc);
-
-    //sanitize photoID
-    $photoID = stripslashes($photoID);
-    $photoID =htmlspecialchars($photoID);
-    $photoID = xss_sanitizer($photoID);
-
-    $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-    if(!$mysqli) die('Could not connect$: ' . mysqli_error());
+    //Define & Sanitize photoID.
+    $photoID = $_POST["photoID"];
+    $photoID = stripslashes( $photoID );
+    $photoID=mysqli_real_escape_string($db,$photoID);
+    $photoID = htmlspecialchars($photoID);
 
 
     if($userID >0) {
         //test connection
         if ($mysqli->connect_errno) {
-            echo "Connetion Failed:check network connection";// to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            echo "Connetion Failed:check network connection";
         }
 
         //Prepare statement for binding.
@@ -67,16 +70,3 @@ if(isset($_POST["submit"]))
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-   
