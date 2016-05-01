@@ -2,6 +2,11 @@
 session_start();
 //include ("secureSessionID.php");//verify user session
 //include ("inactiveTimeOut.php");//check user idle time
+
+//display error
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <?php
 $name = $_SESSION["username"];
@@ -90,10 +95,18 @@ if(isset($_POST["submit"]))
 
                 }
             }
-            else{
+            else
+
+
+            {
                 $msg = "Your image was not uploaded";
             }
-        }else{
+        }else
+
+
+
+
+        {
             $msg = "Your image was not uploaded. We can only accept JPEG or PNG images.";
         }
 
