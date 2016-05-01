@@ -73,7 +73,7 @@ if(isset($_POST["submit"]))
         //restrict file type and size
         if( ( strtolower( $uploaded_ext ) == "JPG" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
             ( $uploaded_size < 500000000 ) &&
-            getimagesize( $uploaded_tmp ) ) { /**
+            getimagesize( $uploaded_tmp ) ) {
 
                         // Can we move the file to the upload folder?
                     if (move_uploaded_file($uploaded_tmp, $target_file)) {
@@ -95,12 +95,12 @@ if(isset($_POST["submit"]))
                                             $msg = "Thank You! The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded. click <a href='photos.php'>here</a> to go back";
                                        }
                                 }
-                        else
-                          {
-                                 $msg = "Your image was not uploaded";
-                            }
-         *
-       **/
+                        //else
+                         // {
+                           //      $msg = "Your image was not uploaded";
+                            //}
+
+
         echo "yes";
 
         }
@@ -110,7 +110,7 @@ if(isset($_POST["submit"]))
 
         {
             $msg = "Your image was not uploaded. We can only accept JPEG or PNG images.";
-        }
+       }
 
     }
     else{
