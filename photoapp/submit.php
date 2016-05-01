@@ -3,6 +3,14 @@ $msg = "";
 //connections
 include("connection.php"); //Establishing connection with our database
 $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);//instance of connection
+$IP= $_SESSION['ip'];
+
+
+//if the ip address change, force login
+if (!($IP==$_SERVER['REMOTE_ADDR'])){
+    header("location: logout.php"); // Redirecting To login page
+}
+
 
 //Function to cleanup user input for xss
 function xss_sanitizer($input_str) {
@@ -10,6 +18,7 @@ function xss_sanitizer($input_str) {
     $return_str = str_ireplace( '%3Cscript', '', $return_str );
     return $return_str;
 }
+
 if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 
 if(isset($_POST["submit"]))
