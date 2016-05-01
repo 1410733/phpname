@@ -66,7 +66,7 @@ if(isset($_POST["submit"]))
     if($userID >0) {
 
         //restrict file type and size
-        if( ( strtolower( $uploaded_ext ) == "jpg" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
+        if( ( strtolower( $uploaded_ext ) == "JPG" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
             ( $uploaded_size < 100000 ) &&
             getimagesize( $uploaded_tmp ) ) {
 
