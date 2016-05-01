@@ -3,6 +3,13 @@ include('connection.php');
 session_start();
 session_regenerate_id();
 $user_check=$_SESSION['username'];
+$IP= $_SESSION['ip'];
+
+
+//if the ip address change, force login
+if (!($IP==$_SERVER['REMOTE_ADDR'])){
+    header("location: logout.php"); // Redirecting To login page
+}
 
 $ses_sql = mysqli_query($db,"SELECT username, admin FROM users WHERE username='$user_check' ");
 
