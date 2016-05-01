@@ -73,37 +73,39 @@ if(isset($_POST["submit"]))
         //restrict file type and size
         if( ( strtolower( $uploaded_ext ) == "JPG" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
             ( $uploaded_size < 500000000 ) &&
-            getimagesize( $uploaded_tmp ) ) {
+            getimagesize( $uploaded_tmp ) ) { /**
 
-            // Can we move the file to the upload folder?
-            if (move_uploaded_file($uploaded_tmp, $target_file)) {
-                //connect to db
-                $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-                //if(!$mysqli) die('Could not connect$: ' . mysqli_error());
+                        // Can we move the file to the upload folder?
+                    if (move_uploaded_file($uploaded_tmp, $target_file)) {
+                            //connect to db
+                            $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
+                             //if(!$mysqli) die('Could not connect$: ' . mysqli_error());
 
-                //test connection
-                if ($mysqli->connect_errno) {
-                    echo "Connection Fail:Check network connection";//: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-                }
+                                //test connection
+                                    if ($mysqli->connect_errno) {
+                                      echo "Connection Fail:Check network connection";//: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+                                         }
 
-                //call procedure
-                if (!$mysqli->query("CALL picture_insert('$title','$desc','$target_file','$userID')")) {
+                                     //call procedure
+                                    if (!$mysqli->query("CALL picture_insert('$title','$desc','$target_file','$userID')")) {
 
-                } else {
+                                        }
+                                    else {
 
-                    $msg = "Thank You! The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded. click <a href='photos.php'>here</a> to go back";
+                                            $msg = "Thank You! The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded. click <a href='photos.php'>here</a> to go back";
+                                       }
+                                }
+                        else
+                          {
+                                 $msg = "Your image was not uploaded";
+                            }
+         *
+       **/
+        echo "yes";
 
-                }
-            }
-            else
+        }
 
-
-            {
-                $msg = "Your image was not uploaded";
-            }
-        }else
-
-
+        else
 
 
         {
