@@ -3,7 +3,7 @@ session_start();
 include("connection.php"); //Establishing connection with our database
 
 //function to clean xss inputs
-function xss_erase ($input_str)
+function xss_sanitizer ($input_str)
 {
     $return_str = str_replace(array('<', '>', "'", '"', ')', '('), array('&lt;', '&gt;', '&apos;', '&#x22;', '&#x29;', '&#x28;'), $input_str);
     $return_str = str_ireplace('%3Cscript', '', $return_str);
@@ -20,7 +20,7 @@ if(isset($_POST["submit"]))
     $photoID =($_POST["photoID"]);
     $name = $_SESSION["username"];
 
-    //get input nd trim
+    //get input and trim
     $desc = trim( $desc );
     $photoID = trim($photoID );
 
@@ -33,8 +33,8 @@ if(isset($_POST["submit"]))
     //prevents xss
     $desc = htmlspecialchars($_POST["desc"]);
     $photoID = htmlspecialchars($_POST["photoID"]);
-    $desc = xss_erase($_POST["desc"]);
-    $photoID = xss_erase($_POST["photoID"]);
+    $desc = xss_sanitizer($_POST["desc"]);
+    $photoID = xss_sanitizer($_POST["photoID"]);
 
 
     $sql="SELECT userID FROM users WHERE username='$name'";
