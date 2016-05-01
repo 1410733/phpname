@@ -16,7 +16,7 @@ $ip=$_SESSION["ip"];
 
 ?>
 <?php
-include("connection.php"); //Establishing connection with our database
+//include("connection.php"); //Establishing connection with our database
 
 
 //check session highjacking
