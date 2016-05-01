@@ -17,7 +17,7 @@
         if(isset($_GET['id'])){
             $photoID = $_GET['id'];
             $photoSql="SELECT * FROM photos WHERE photoID='$photoID'";
-            $photoresult=mysqli_query($db,$photoSql) or die(mysqli_error($db));
+            $photoresult=mysqli_query($db,$photoSql) or die ( '<pre>Something went wrong.</pre>');
             if(mysqli_num_rows($photoresult)==1){
                 $photoRow = mysqli_fetch_assoc($photoresult);
                 echo "<h1>".$photoRow['title']."</h1>";
@@ -27,7 +27,7 @@
 
 
                 $commentSql="SELECT * FROM comments WHERE photoID='$photoID'";
-                $commentresult=mysqli_query($db,$commentSql) or die(mysqli_error($db));
+                $commentresult=mysqli_query($db,$commentSql) or die( '<pre>Something went wrong.</pre>' );
                 if(mysqli_num_rows($commentresult)>1) {
 
                     echo "<h2> Comments </h2>";

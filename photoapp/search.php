@@ -1,10 +1,13 @@
 <?php
+function xecho ($resultText) {
+    echo xss_sanitizer($resultText);
+}
 $resultText = "";
 
 
 
 //Function to cleanup user input for xss
-function xss_cleaner($input_str) {
+function xss_sanitizer($input_str) {
     $return_str = str_replace( array('<','>',"'",'"',')','('), array('&lt;','&gt;','&apos;','&#x22;','&#x29;','&#x28;'), $input_str );
     $return_str = str_ireplace( '%3Cscript', '', $return_str );
     return $return_str;
@@ -14,7 +17,7 @@ if(isset($_POST["submit"]))
     $name = $_POST["username"];
     //filter user input
     $name=mysqli_real_escape_string($db,$name);
-    $name=xss_cleaner($name);
+    $name=xss_sanitizer($name);
 
     //instance of connection to dbase
     $mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);

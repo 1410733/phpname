@@ -1,5 +1,6 @@
 <?php
 $resultText = "";
+session_regenerate_id();
 if(isset($_SESSION['username']))
 {
     $name = $_SESSION["username"];

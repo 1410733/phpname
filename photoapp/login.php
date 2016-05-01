@@ -6,7 +6,7 @@ session_regenerate_id();
 include("connection.php"); //Establishing connection with our database
 
 //Function to cleanup user input for xss
-function xss_cleaner($input_str) {
+function xss_sanitizer($input_str) {
 	$return_str = str_replace( array('<','>',"'",'"',')','('), array('&lt;','&gt;','&apos;','&#x22;','&#x29;','&#x28;'), $input_str );
 	$return_str = str_ireplace( '%3Cscript', '', $return_str );
 	return $return_str;
@@ -26,11 +26,11 @@ if(isset($_POST["submit"]))
 
 		//clean user supplied input
 		$username=mysqli_real_escape_string($db,$username);
-		$username=xss_cleaner($username);
+		$username=xss_sanitizer($username);
 		$password=md5($password);
 
 		//clean user input from cross site scripting
-		xss_cleaner($username );
+		xss_sanitizer($username );
 
 		//instance connection to te DB
 		$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
@@ -38,7 +38,7 @@ if(isset($_POST["submit"]))
 
 		//test connection
 		if ($mysqli->connect_errno) {
-			echo "Failed to connect to Database: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+			echo ( '<pre>Something went wrong.</pre>' );
 		}
 
 		//create procedure

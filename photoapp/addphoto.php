@@ -12,6 +12,12 @@ $IP= $_SESSION['ip'];
 <?php
 include("connection.php"); //Establishing connection with our database
 
+function xss_sanitizer($input_str) {
+    $return_str = str_replace( array('<','>',"'",'"',')','('), array('&lt;','&gt;','&apos;','&#x22;','&#x29;','&#x28;'), $input_str );
+    $return_str = str_ireplace( '%3Cscript', '', $return_str );
+    return $return_str;
+}
+
 //If there is a change is ip address, redirect to login page
 if (!($IP==$_SERVER['REMOTE_ADDR'])){
     header("location: logout.php"); // Redirecting To login page
@@ -29,12 +35,14 @@ if(isset($_POST["submit"]))
     $title = stripslashes( $title );
     $title=mysqli_real_escape_string($db,$title);
     $title = htmlspecialchars( $title );
+    $title=xss_sanitizer($title);
 
 
     //clean input description
     $desc = stripslashes( $desc );
     $desc=mysqli_real_escape_string($db,$desc);
     $desc = htmlspecialchars( $desc );
+    $desc = xss_sanitizer($desc);
 
 
     //check for file upload error
