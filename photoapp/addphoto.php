@@ -53,7 +53,7 @@ if(isset($_POST["submit"]))
 
         //restrict file type and size
         if( ( strtolower( $uploaded_ext ) == "jpg" || strtolower( $uploaded_ext ) == "jpeg" || strtolower( $uploaded_ext ) == "png" ) &&
-            ( $uploaded_size < 100000 ) &&
+            ( $uploaded_size < 1000000 ) &&
             getimagesize( $uploaded_tmp ) ) {
 
             // Can we move the file to the upload folder?
@@ -80,7 +80,7 @@ if(isset($_POST["submit"]))
                 $msg = "Your image was not uploaded";
             }
         }else{
-            $msg = "Your image was not uploaded. We can only accept JPEG or PNG images.";
+            $msg = "Your image was not uploaded. We can only accept JPEG or PNG images. or file size should not be more than 1Mb";
         }
 
     }
