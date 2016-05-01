@@ -39,7 +39,7 @@ if(isset($_POST["submit"]))
      //   $uploadOk = 0;
    // }
 
-    if ($imageFileType != "JPG" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif" && ($_FILES["fileToUpload"]["size"] > 400000))
+    if ($imageFileType != "JPG" && $imageFileType !="png" && $imageFileType != "jpeg" && $imageFileType != "gif" && ($_FILES["fileToUpload"]["size"] < 400000))
     {
         echo "Sorry, Only JPG, JPEG, PNG & GIF files are allowed or the file size is too large.";
         $uploadOk = 0;
