@@ -1,67 +1,52 @@
 <?php
 session_start();
-/*display error
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); */
+include("connection.php"); //Establishing connection with our database
 
-//Establishing connection with our database
-include("connection.php");
-$mysqli = new mysqli(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-if(!$mysqli) die('Could not connect$: ' . mysqli_error());
-
-//get the session variables
-
-$name = $_SESSION["username"];
-$userID=$_SESSION["userid"];
-echo $userID;
-?>
-<?php
+//function to clean xss inputs
+function xss_erase ($input_str)
+{
+    $return_str = str_replace(array('<', '>', "'", '"', ')', '('), array('&lt;', '&gt;', '&apos;', '&#x22;', '&#x29;', '&#x28;'), $input_str);
+    $return_str = str_ireplace('%3Cscript', '', $return_str);
+    return $return_str;
+}
+//xss safe output - sanitizing output
+function xecho($error){ echo xss_erase($error);}
 $msg = ""; //Variable for storing our errors.
 
 if(isset($_POST["submit"]))
 {
 
-    //Define & Sanitize description.
-    $desc = $_POST["desc"];
-    $desc = stripslashes( $desc );
-    $desc=mysqli_real_escape_string($db,$desc);
-    $desc = htmlspecialchars( $desc );
-
-    //Define & Sanitize username.
+    $desc = ($_POST["desc"]);
+    $photoID =($_POST["photoID"]);
     $name = $_SESSION["username"];
-    $name = stripslashes( $name );
-    $name=mysqli_real_escape_string($db,$name);
-    $name = htmlspecialchars($name);
 
-    //Define & Sanitize photoID.
-    $photoID = $_POST["photoID"];
-    $photoID = stripslashes( $photoID );
-    $photoID=mysqli_real_escape_string($db,$photoID);
-    $photoID = htmlspecialchars($photoID);
+    //get input nd trim
+    $desc = trim( $desc );
+    $photoID = trim($photoID );
 
+    // escape special characters
+    $desc = stripslashes($desc);
+    $photoID = stripslashes($photoID);
+    $desc = mysqli_real_escape_string($db, $desc);
+    $photoID = mysqli_real_escape_string($db, $photoID);
 
-    if($userID >0) {
-        //test connection
-        if ($mysqli->connect_errno) {
-            echo "Connetion Failed:check network connection";
-        }
-
-        //Prepare statement for binding.
-        if ( !( $stmt=$mysqli->prepare("INSERT INTO comments (description, photoID, userID) VALUES (?, ?, ?)")))  {
-            echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
-        }
+    //prevents xss
+    $desc = htmlspecialchars($_POST["desc"]);
+    $photoID = htmlspecialchars($_POST["photoID"]);
+    $desc = xss_erase($_POST["desc"]);
+    $photoID = xss_erase($_POST["photoID"]);
 
 
-        else{
-            //bind parameter
-            $stmt->bind_param('sii', $desc, $photoID, $userID);
-            $stmt->execute();
-            $result=1;
-
-            if($result==1)
-
-                $msg = "Thank You! comment added. click <a href='photo.php?id=".$photoID."'>here</a> to go back";
+    $sql="SELECT userID FROM users WHERE username='$name'";
+    $result=mysqli_query($db,$sql);
+    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+    if(mysqli_num_rows($result) == 1) {
+        //echo $name." ".$email." ".$password;
+        $id = $row['userID'];
+        $addsql = "INSERT INTO comments (description, postDate,photoID,userID) VALUES ('$desc',now(),'$photoID','$id')";
+        $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
+        if ($query) {
+            $msg = "Thank You! comment added. click <a href='photo.php?id=".$photoID."'>here</a> to go back";
         }
     }
     else{
