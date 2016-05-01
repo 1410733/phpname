@@ -3,6 +3,8 @@ session_start();
 session_regenerate_id();
 include("connection.php"); //Establishing connection with our database
 
+$userID=$_SESSION["userid"] ;
+
 $msg = ""; //Variable for storing our errors.
 if(isset($_POST["submit"]))
 {
@@ -20,17 +22,27 @@ if(isset($_POST["submit"]))
     $photoID = stripslashes($photoID);
     $photoID =htmlspecialchars($photoID);
 
+    if($userID >0) {
+        //test connection
+        if ($mysqli->connect_errno) {
+            echo "Connetion Failed:check network connection";// to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+        }
 
-    $sql="SELECT userID FROM users WHERE username='$name'";
-    $result=mysqli_query($db,$sql);
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-    if(mysqli_num_rows($result) == 1) {
-        //echo $name." ".$email." ".$password;
-        $id = $row['userID'];
-        $addsql = "INSERT INTO comments (description, postDate,photoID,userID) VALUES ('$desc',now(),'$photoID','$id')";
-        $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
-        if ($query) {
-            $msg = "Thank You! comment added. click <a href='photo.php?id=".$photoID."'>here</a> to go back";
+        //Prepare statement for binding.
+        if ( !( $stmt=$mysqli->prepare("INSERT INTO comments (description, photoID, userID) VALUES (?, ?, ?)")))  {
+            echo "CALL failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        }
+
+
+        else{
+            //bind parameter
+            $stmt->bind_param('sii', $desc, $photoID, $userID);
+            $stmt->execute();
+            $result=1;
+
+            if($result==1)
+
+                $msg = "Thank You! comment added. click <a href='photo.php?id=".$photoID."'>here</a> to go back";
         }
     }
     else{
@@ -39,3 +51,16 @@ if(isset($_POST["submit"]))
 }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+   
