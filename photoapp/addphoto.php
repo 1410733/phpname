@@ -8,12 +8,7 @@ $name = $_SESSION["username"];
 $userID=$_SESSION["userid"];
 $ip=$_SESSION["ip"];
 
-//Function to cleanup user input for xss
-function xss_cleaner($input_str) {
-    $return_str = str_replace( array('<','>',"'",'"',')','(','/'), array('&lt;','&gt;','&apos;','&#x22;','&#x29;','&#x28;','&mm'), $input_str );
-    $return_str = str_ireplace( '%3Cscript', '', $return_str );
-    return $return_str;
-}
+
 ?>
 <?php
 include("connection.php"); //Establishing connection with our database
@@ -45,13 +40,13 @@ if(isset($_POST["submit"]))
     $title = stripslashes( $title );
     $title=mysqli_real_escape_string($db,$title);
     $title = htmlspecialchars( $title );
-    $title=xssafe($title);
+
 
     //clean input description
     $desc = stripslashes( $desc );
     $desc=mysqli_real_escape_string($db,$desc);
     $desc = htmlspecialchars( $desc );
-    $desc=xssafe($desc);
+
 
     //check for file upload error
     if($_FILES['fileToUpload']['error'] == 0) {
