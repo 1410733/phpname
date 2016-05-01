@@ -6,13 +6,16 @@ session_start();
 <?php
 $name = $_SESSION["username"];
 $userID=$_SESSION["userid"];
-
-
+$IP= $_SESSION['ip'];
 
 ?>
 <?php
 include("connection.php"); //Establishing connection with our database
 
+//If there is a change is ip address, redirect to login page
+if (!($IP==$_SERVER['REMOTE_ADDR'])){
+    header("location: logout.php"); // Redirecting To login page
+}
 
 $msg = ""; //Variable for storing our errors.
 

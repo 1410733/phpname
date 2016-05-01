@@ -26,6 +26,7 @@ if(isset($_POST["submit"]))
 
 		//clean user supplied input
 		$username=mysqli_real_escape_string($db,$username);
+		$username=xss_cleaner($username);
 		$password=md5($password);
 
 		//clean user input from cross site scripting
@@ -37,7 +38,7 @@ if(isset($_POST["submit"]))
 
 		//test connection
 		if ($mysqli->connect_errno) {
-			echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+			echo "Failed to connect to Database: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
 
 		//create procedure
