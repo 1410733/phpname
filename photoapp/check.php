@@ -33,6 +33,7 @@ if (isset($_SESSION['timeout'])) {
         session_unset();
         session_destroy();
         header("Location: index.php");
+        echo "Your session has expired";
     }
 }
 else {
