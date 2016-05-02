@@ -29,12 +29,10 @@ if (isset($_SESSION['timeout'])) {
     $logintime = $_SESSION['timeout'];
     $differenceintime = time() - $logintime;
 
-    if ($differenceintime >= 50) { //session expiration
+    if ($differenceintime >= 420) { //session expiration
         session_unset();
         session_destroy();
         header("Location: index.php");
-        $timeoutmsg= "Your session has expired";
-        echo $timeoutmsg;
     }
 }
 else {
